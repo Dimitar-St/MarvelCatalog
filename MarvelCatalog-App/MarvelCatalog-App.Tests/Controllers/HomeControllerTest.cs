@@ -56,5 +56,12 @@ namespace MarvelCatalog_App.Tests.Controllers
         {
             Assert.IsTrue(true);
         }
+
+
+        [TestMethod]
+        public void TestJenkins2()
+        {
+            Assert.IsTrue(true);
+        }
     }
 }

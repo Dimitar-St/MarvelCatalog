@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App", "MarvelCatalog-App\MarvelCatalog-App.csproj", "{25DCE9B0-AE6E-4DA1-938F-1CBD0C299511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Tests", "MarvelCatalog-App.Tests\MarvelCatalog-App.Tests.csproj", "{D5DCF442-466A-4ACF-B991-CEC48E32B17C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Service.API", "MarvelCatalog-App.Services.API\MarvelCatalog-App.Service.API.csproj", "{E68EF5A1-293D-4556-B3E6-DF27FD036948}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{41494B18-2477-409E-BA91-3B31151CE2A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5BC62D14-1787-4DFA-88A0-A18DADEACCC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8CCAB7CA-5ADF-47CA-B332-1291A98E3635}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25DCE9B0-AE6E-4DA1-938F-1CBD0C299511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25DCE9B0-AE6E-4DA1-938F-1CBD0C299511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25DCE9B0-AE6E-4DA1-938F-1CBD0C299511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25DCE9B0-AE6E-4DA1-938F-1CBD0C299511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5DCF442-466A-4ACF-B991-CEC48E32B17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5DCF442-466A-4ACF-B991-CEC48E32B17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5DCF442-466A-4ACF-B991-CEC48E32B17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5DCF442-466A-4ACF-B991-CEC48E32B17C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E68EF5A1-293D-4556-B3E6-DF27FD036948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68EF5A1-293D-4556-B3E6-DF27FD036948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68EF5A1-293D-4556-B3E6-DF27FD036948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68EF5A1-293D-4556-B3E6-DF27FD036948}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{25DCE9B0-AE6E-4DA1-938F-1CBD0C299511} = {41494B18-2477-409E-BA91-3B31151CE2A5}
+		{D5DCF442-466A-4ACF-B991-CEC48E32B17C} = {8CCAB7CA-5ADF-47CA-B332-1291A98E3635}
+		{E68EF5A1-293D-4556-B3E6-DF27FD036948} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
+	EndGlobalSection
+EndGlobal

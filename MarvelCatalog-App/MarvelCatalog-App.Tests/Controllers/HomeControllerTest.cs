@@ -63,5 +63,11 @@ namespace MarvelCatalog_App.Tests.Controllers
         {
             Assert.IsTrue(true);
         }
+
+        [TestMethod]
+        public void TestJenkins3()
+        {
+            Assert.IsTrue(true);
+        }
     }
 }

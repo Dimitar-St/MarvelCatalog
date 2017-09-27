@@ -18,14 +18,13 @@ namespace MarvelCatalog_App.Controllers
             this.service = service;
         }
 
-        // TODO: Make a view model and don't user ViewBag
         public ActionResult MainCharactersPage()
         {
             var characters = this.service.GetCharecters();
 
-            ViewBag.Characters = characters;
+            var charactersViewModel = new CharactersViewModel(characters);
 
-            return base.View();
+            return base.View(charactersViewModel);
         } 
     }
 }

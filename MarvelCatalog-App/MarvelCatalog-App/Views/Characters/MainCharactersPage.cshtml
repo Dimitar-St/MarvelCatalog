@@ -1,11 +1,11 @@
-﻿
+﻿@model MarvelCatalog_App.ViewModels.CharactersViewModel
 @{
     ViewBag.Title = "MainCharactersPage";
 }
 
 <h2>MainCharactersPage</h2>
 
-@foreach (var character in ViewBag.Characters)
+@foreach (var character in Model.Characters)
 {
     <div class="jumbotron">
         <h1 class="display-3">@character.Name</h1>

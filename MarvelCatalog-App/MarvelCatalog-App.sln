@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8CCAB7CA-5ADF-47CA-B332-1291A98E3635}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Services.Contracts", "MarvelCatalog-App.Services.Contracts\MarvelCatalog-App.Services.Contracts.csproj", "{38611315-1214-4014-9006-2375A0962673}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Contracts", "MarvelCatalog-App.Services.Contracts\MarvelCatalog-App.Contracts.csproj", "{38611315-1214-4014-9006-2375A0962673}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -60,9 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MarvelCatalog-App.Services.Contracts\MarvelCatalog-App.Services.Contracts.csproj">
+    <ProjectReference Include="..\MarvelCatalog-App.Services.Contracts\MarvelCatalog-App.Contracts.csproj">
       <Project>{38611315-1214-4014-9006-2375A0962673}</Project>
-      <Name>MarvelCatalog-App.Services.Contracts</Name>
+      <Name>MarvelCatalog-App.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

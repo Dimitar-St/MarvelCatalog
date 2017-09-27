@@ -26,7 +26,7 @@ namespace MarvelCatalog_App.Models
         {
             var id = int.Parse(obj["id"].ToString());
             var name = obj["name"].ToString();
-            var image = obj["thumbnail"]["path"].ToString() + "jpg";
+            var image = obj["thumbnail"]["path"].ToString() + ".jpg";
 
             var characterModel = new CharacterModel(id, name, image);
 

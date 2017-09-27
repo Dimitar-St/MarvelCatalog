@@ -317,9 +317,9 @@
       <Project>{e68ef5a1-293d-4556-b3e6-df27fd036948}</Project>
       <Name>MarvelCatalog-App.Service.API</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MarvelCatalog-App.Services.Contracts\MarvelCatalog-App.Services.Contracts.csproj">
+    <ProjectReference Include="..\MarvelCatalog-App.Services.Contracts\MarvelCatalog-App.Contracts.csproj">
       <Project>{38611315-1214-4014-9006-2375A0962673}</Project>
-      <Name>MarvelCatalog-App.Services.Contracts</Name>
+      <Name>MarvelCatalog-App.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

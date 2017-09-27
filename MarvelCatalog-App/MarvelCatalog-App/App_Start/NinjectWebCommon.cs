@@ -10,6 +10,8 @@ namespace MarvelCatalog_App.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Services.API.Contracts;
+    using Services.API;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +63,7 @@ namespace MarvelCatalog_App.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ICharacterService>().To<CharactersService>();
         }        
     }
 }

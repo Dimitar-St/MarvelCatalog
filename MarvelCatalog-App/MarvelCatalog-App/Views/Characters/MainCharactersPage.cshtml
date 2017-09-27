@@ -5,3 +5,11 @@
 
 <h2>MainCharactersPage</h2>
 
+@foreach (var character in ViewBag.Characters)
+{
+    <div class="jumbotron">
+        <h1 class="display-3">@character.Name</h1>
+    </div>
+}
+
+

@@ -50,24 +50,5 @@ namespace MarvelCatalog_App.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
-
-        [TestMethod]
-        public void TestJenkins()
-        {
-            Assert.IsTrue(true);
-        }
-
-
-        [TestMethod]
-        public void TestJenkins2()
-        {
-            Assert.IsTrue(true);
-        }
-
-        [TestMethod]
-        public void TestJenkins3()
-        {
-            Assert.IsTrue(true);
-        }
     }
 }

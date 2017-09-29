@@ -11,11 +11,16 @@ using MarvelCatalog_App.Models;
 
 namespace MarvelCatalog_App.Services.API
 {
-    public class CharactersService : ICharacterService
+    public class CharacterService : ICharacterService
     {
-        public CharactersService() { }
+        private readonly IJSONModelsFactory modelsFactory;
+
+        public CharacterService(IJSONModelsFactory modelsfactory)
+        {
+            this.modelsFactory = modelsfactory;
+        }
         
-        public ICollection<ICharacterModel> GetCharecters()
+        public ICollection<CharacterModel> GetCharecters()
         {
             var url = "http://gateway.marvel.com/v1/public/characters?ts=1&apikey=33089e63dea73b570c975ace0bdce727&hash=eff5e80c387afc4f6de349fdfd235795";
 
@@ -25,7 +30,7 @@ namespace MarvelCatalog_App.Services.API
 
             var charactersJson = JObject.Parse(data)["data"]["results"];
 
-            ICollection<ICharacterModel> characters = CharacterModel.MapCollection(charactersJson);
+            ICollection<CharacterModel> characters = this.modelsFactory.MapCharacters(charactersJson);
 
             return characters;
         }

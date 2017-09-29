@@ -207,6 +207,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -222,11 +223,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\IHaveCustomMappings.cs" />
+    <Compile Include="Infrastructure\IMapFrom.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\CharactersViewModel.cs" />
+    <Compile Include="ViewModels\CharacterViewModel.cs" />
     <Compile Include="ViewModels\FactorViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
@@ -300,6 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -313,13 +317,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MarvelCatalog-App.Services.API\MarvelCatalog-App.Service.API.csproj">
-      <Project>{e68ef5a1-293d-4556-b3e6-df27fd036948}</Project>
-      <Name>MarvelCatalog-App.Service.API</Name>
+    <ProjectReference Include="..\Marvel-Catalog-App.Data.API.Models\Marvel-Catalog-App.Data.Models.csproj">
+      <Project>{b8537839-ca0c-4e51-918c-2842de6262cf}</Project>
+      <Name>Marvel-Catalog-App.Data.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MarvelCatalog-App.Services.Contracts\MarvelCatalog-App.Contracts.csproj">
-      <Project>{38611315-1214-4014-9006-2375A0962673}</Project>
-      <Name>MarvelCatalog-App.Contracts</Name>
+    <ProjectReference Include="..\MarvelCatalog-App.Data\MarvelCatalog-App.Data.csproj">
+      <Project>{56BA4901-A528-4EF3-9126-F5430F9EE2DE}</Project>
+      <Name>MarvelCatalog-App.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarvelCatalog-App.Services.API\MarvelCatalog-App.Data.API.csproj">
+      <Project>{e68ef5a1-293d-4556-b3e6-df27fd036948}</Project>
+      <Name>MarvelCatalog-App.Data.API</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

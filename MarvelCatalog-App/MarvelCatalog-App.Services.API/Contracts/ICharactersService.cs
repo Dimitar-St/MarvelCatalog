@@ -9,6 +9,6 @@ namespace MarvelCatalog_App.Services.API.Contracts
 {
     public interface ICharacterService
     {
-        ICollection<ICharacterModel> GetCharecters();
+        ICollection<CharacterModel> GetCharecters();
     }
 }

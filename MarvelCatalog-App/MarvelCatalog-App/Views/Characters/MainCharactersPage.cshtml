@@ -3,13 +3,11 @@
     ViewBag.Title = "MainCharactersPage";
 }
 
-<h2>MainCharactersPage</h2>
-
-@foreach (var character in Model.Characters)
+@foreach (var character in Model.CharactersViewModels)
 {
     <div class="jumbotron">
         <h1 class="display-3">@character.Name</h1>
-        <img src="@character.Thumbnail" style="width: 400px; height: 600px;">
+        <img src="@character.Thumbnail" style="width: 400px; height: 500px;">
     </div>
 }
 

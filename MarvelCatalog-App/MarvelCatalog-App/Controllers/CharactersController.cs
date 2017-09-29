@@ -1,4 +1,5 @@
-﻿using MarvelCatalog_App.Models;
+﻿using AutoMapper;
+using MarvelCatalog_App.Models;
 using MarvelCatalog_App.Services.API.Contracts;
 using MarvelCatalog_App.ViewModels;
 using System;
@@ -18,12 +19,15 @@ namespace MarvelCatalog_App.Controllers
             this.service = service;
         }
 
+        //TODO: fix this method later.
         public ActionResult MainCharactersPage()
         {
             var characters = this.service.GetCharecters();
+            
+            var mappedCharactersModel = Mapper.Map<ICollection<CharacterViewModel>>(characters);
 
-            var charactersViewModel = new CharactersViewModel(characters);
-
+            var charactersViewModel = new CharactersViewModel(mappedCharactersModel);
+           
             return base.View(charactersViewModel);
         } 
     }

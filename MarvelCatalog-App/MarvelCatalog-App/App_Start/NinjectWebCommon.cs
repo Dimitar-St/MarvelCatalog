@@ -12,6 +12,8 @@ namespace MarvelCatalog_App.App_Start
     using Ninject.Web.Common;
     using Services.API.Contracts;
     using Services.API;
+    using ViewModels;
+    using AutoMapper;
 
     public static class NinjectWebCommon 
     {
@@ -63,7 +65,9 @@ namespace MarvelCatalog_App.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<ICharacterService>().To<CharactersService>();
+            kernel.Bind<ICharacterService>().To<CharacterService>();
+            kernel.Bind<IJSONModelsFactory>().To<JSONModelsDactory>().InSingletonScope();
+            kernel.Bind<IMapper>().To<Mapper>();
         }        
     }
 }

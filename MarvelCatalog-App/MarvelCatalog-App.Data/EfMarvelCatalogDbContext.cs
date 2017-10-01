@@ -29,6 +29,5 @@ namespace MarvelCatalog_App.Data
         {
             return base.Set<T>();
         }
-
     }
 }

@@ -96,7 +96,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="Services\CharacterService\Constructor_Should.cs" />
+    <Compile Include="Services\CharacterServiceTests\Constructor_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -112,6 +112,10 @@
     <ProjectReference Include="..\MarvelCatalog-App.Data\MarvelCatalog-App.Data.csproj">
       <Project>{56BA4901-A528-4EF3-9126-F5430F9EE2DE}</Project>
       <Name>MarvelCatalog-App.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarvelCatalog-App.Services\MarvelCatalog-App.Services.csproj">
+      <Project>{95f374ec-20c4-4cf2-b270-8efa2465ec85}</Project>
+      <Name>MarvelCatalog-App.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\MarvelCatalog-App\MarvelCatalog-App.csproj">
       <Project>{25DCE9B0-AE6E-4DA1-938F-1CBD0C299511}</Project>

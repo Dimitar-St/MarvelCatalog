@@ -27,10 +27,10 @@ namespace MarvelCatalog_App
            // var mapper = new AutoMapperConfig();
            // mapper.Execute(Assembly.GetExecutingAssembly());
 
-            AutoMapper.Mapper.Initialize(config =>
-            {
-                config.CreateMap<CharacterDataModel, CharacterViewModel>();
-            });
+            //AutoMapper.Mapper.Initialize(config =>
+            //{
+            //    config.CreateMap<CharacterDataModel, CharacterViewModel>();
+            //});
         }
     }
 }

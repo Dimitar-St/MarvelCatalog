@@ -22,9 +22,7 @@ namespace MarvelCatalog_App.Data.Repositories
             this.dbSet = dbContext.GetSet<T>();
             this.dbContext = dbContext;
         }
-
-
-
+        
         public IEnumerable<T> All
         {
             get

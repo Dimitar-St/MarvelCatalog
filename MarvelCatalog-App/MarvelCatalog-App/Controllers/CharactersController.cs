@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bytes2you.Validation;
 using MarvelCatalog_App.Models;
 using MarvelCatalog_App.Services;
 using MarvelCatalog_App.Services.Contracts;
@@ -14,17 +15,22 @@ namespace MarvelCatalog_App.Controllers
     public class CharactersController : Controller
     {
         private readonly ICharacterService service;
+        private IMapper mapper;
 
-        public CharactersController(ICharacterService service)
+        public CharactersController(ICharacterService service, IMapper mapper)
         {
+            Guard.WhenArgument(service, nameof(service)).IsNull().Throw();
+            Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
+
             this.service = service;
+            this.mapper = mapper;
         }
         
         public ActionResult MainCharactersPage()
         {
             var charactersData = this.service.GetCharacters();
 
-            IEnumerable<CharacterViewModel> characters = Mapper.Map<IEnumerable<CharacterViewModel>>(charactersData);
+            IEnumerable<CharacterViewModel> characters = this.mapper.Map<IEnumerable<CharacterViewModel>>(charactersData);
 
             return base.View(characters);
         } 
@@ -33,7 +39,7 @@ namespace MarvelCatalog_App.Controllers
         {
             var characterData = this.service.GetCharacter(name);
 
-            CharacterViewModel characterViewModel = Mapper.Map<CharacterViewModel>(characterData);
+            CharacterViewModel characterViewModel = this.mapper.Map<CharacterViewModel>(characterData);
 
             return this.View(characterViewModel);
         }

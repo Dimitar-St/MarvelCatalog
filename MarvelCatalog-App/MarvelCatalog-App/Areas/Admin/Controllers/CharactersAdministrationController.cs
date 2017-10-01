@@ -7,9 +7,9 @@ using System.Web.Mvc;
 namespace MarvelCatalog_App.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class CharactersController : Controller
+    public class CharactersAdministrationController : Controller
     {
-        public CharactersController() { }
+        public CharactersAdministrationController() { }
 
         public ActionResult Index()
         {

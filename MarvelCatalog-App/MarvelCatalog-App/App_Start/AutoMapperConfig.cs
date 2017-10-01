@@ -9,11 +9,12 @@ using System.Web;
 
 namespace MarvelCatalog_App.App_Start
 {
-    public class AutoMapperConfig : NinjectModule
+    public class AutoMapperConfig : IMapperAdapter
     {
-        public override void Load()
+        public T Map<T>(object objectToMap)
         {
-            throw new NotImplementedException();
+            //Mapper.Map is a static method of the library!
+            return Mapper.Map<T>(objectToMap);
         }
     }
 }

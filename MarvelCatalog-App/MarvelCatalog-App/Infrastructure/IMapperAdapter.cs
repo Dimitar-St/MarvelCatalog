@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MarvelCatalog_App.Infrastructure
 {
-    public interface IMapFrom<T>
+    public interface IMapperAdapter
     {
+        T Map<T>(object objectToMap);
     }
 }

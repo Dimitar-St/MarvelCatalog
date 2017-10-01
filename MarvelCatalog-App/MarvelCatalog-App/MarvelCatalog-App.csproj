@@ -228,7 +228,6 @@
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="ViewModels\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
-    <Compile Include="ViewModels\CharactersViewModel.cs" />
     <Compile Include="ViewModels\CharacterViewModel.cs" />
     <Compile Include="ViewModels\FactorViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
@@ -300,6 +299,7 @@
     <Content Include="Views\Comics\MainComicsPage.cshtml" />
     <Content Include="Views\Characters\MainCharactersPage.cshtml" />
     <Content Include="Views\Creators\MainCreatorsPage.cshtml" />
+    <Content Include="Views\Characters\GivenCharacterPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

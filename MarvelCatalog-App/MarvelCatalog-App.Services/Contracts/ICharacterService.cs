@@ -10,5 +10,7 @@ namespace MarvelCatalog_App.Services.Contracts
     public interface ICharacterService
     {
         IEnumerable<CharacterDataModel> GetCharacters();
+
+        CharacterDataModel GetCharacter(string name);
     }
 }

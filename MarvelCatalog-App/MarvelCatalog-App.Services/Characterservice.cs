@@ -26,5 +26,12 @@ namespace MarvelCatalog_App.Services
             return wantedCharacters;
         }
 
+        public CharacterDataModel GetCharacter(string name)
+        {
+            var wantedCharacter = this.characters.All.First(c => c.Name == name);
+
+            return wantedCharacter;
+        }
+
     }
 }

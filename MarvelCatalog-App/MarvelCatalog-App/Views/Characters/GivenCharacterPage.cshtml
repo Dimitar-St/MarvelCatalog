@@ -1,0 +1,22 @@
+﻿@model MarvelCatalog_App.ViewModels.CharacterViewModel
+@{
+    ViewBag.Title = "GivenCharacterPage";
+}
+
+ <div class="container" *ngFor="let crimeMovie of crimeMovies">
+     <div class="jumbotron">
+         <div class="row">
+             <div class="col-md-6">
+                 <h2>@Model.Name</h2>
+                 <div class="details">
+                     <h4><b>Desciption:</b> @Model.Description</h4>
+                 </div>
+             </div>
+             <div class="pull-right image-container">
+                 <img src="@Model.Image" style="height: 400px; width: 250px;">
+             </div>
+             @Html.ActionLink("Back", "MainCharactersPage", "Characters", new { @class="btn btn-primary" })
+         </div>
+     </div>
+ </div>
+

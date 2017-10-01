@@ -1,8 +1,27 @@
-﻿@{
+﻿@model IEnumerable< MarvelCatalog_App.ViewModels.CharacterViewModel>
+@{
     ViewBag.Title = "MainCharactersPage";
 }
 
-<h1>MainCharactersPage</h1>
+@foreach (var character in Model)
+{
+    <div class="container" *ngFor="let crimeMovie of crimeMovies">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>@character.Name</h2>
+                    <div class="details">
+                        <h4><b>Desciption:</b> @character.Description.Substring(0, 30) ....</h4>
+                    </div>
+                </div>
+                <div class="pull-right image-container">
+                    <img src="@character.Image" style="height: 400px; width: 250px;">
+                </div>
+                @Html.ActionLink("Show more ...", "GivenCharacterPage", "Characters", new { name = character.Name }, new { @class = "btn btn-primary" })
+           </div>
+        </div>
+    </div>
+}
 
 
 

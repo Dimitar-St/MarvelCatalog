@@ -35,5 +35,28 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
 
             mockedService.Verify(service => service.GetCharacters(), Times.Once);
         }
+
+        [Test]
+        public void Call_MapMethod_FromTheMapper()
+        {
+            var charactersDataModel = new List<CharacterDataModel>();
+            var charactersViewModel = new List<CharacterViewModel>();
+
+            var mockedService = new Mock<ICharacterService>();
+            var mockedMapper = new Mock<IMapper>();
+
+            mockedService.Setup(service => service.GetCharacters())
+                         .Returns(charactersDataModel);
+
+            mockedMapper.Setup(mapper => mapper.Map<IEnumerable<CharacterViewModel>>(charactersDataModel))
+                        .Returns(charactersViewModel);
+
+
+            var characterController = new CharactersController(mockedService.Object, mockedMapper.Object);
+
+            characterController.MainCharactersPage();
+
+            mockedMapper.Verify(mapper => mapper.Map<IEnumerable<CharacterViewModel>>(It.IsAny<IEnumerable<CharacterDataModel>>()), Times.Once);
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using MarvelCatalog_App.Models;
+using Marvel_Catalog_App.Data.API.Models.JSONDataModel;
 
 namespace MarvelCatalog_App.Services.API
 {
@@ -20,7 +21,7 @@ namespace MarvelCatalog_App.Services.API
             this.modelsFactory = modelsfactory;
         }
         
-        public ICollection<CharacterModel> GetCharecters()
+        public RootObject Get()
         {
             var url = "http://gateway.marvel.com/v1/public/characters?ts=1&apikey=33089e63dea73b570c975ace0bdce727&hash=eff5e80c387afc4f6de349fdfd235795";
 
@@ -29,10 +30,12 @@ namespace MarvelCatalog_App.Services.API
             var data = request.DownloadString(url);
 
             var charactersJson = JObject.Parse(data)["data"]["results"];
+            var jsonConvert = JsonConvert.DeserializeObject<RootObject>(data);
+
 
             ICollection<CharacterModel> characters = this.modelsFactory.MapCharacters(charactersJson);
 
-            return characters;
+            return jsonConvert;
         }
     }
 }

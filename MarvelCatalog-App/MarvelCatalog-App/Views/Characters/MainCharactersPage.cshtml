@@ -1,14 +1,8 @@
-﻿@model MarvelCatalog_App.ViewModels.CharactersViewModel
-@{
+﻿@{
     ViewBag.Title = "MainCharactersPage";
 }
 
-@foreach (var character in Model.CharactersViewModels)
-{
-    <div class="jumbotron">
-        <h1 class="display-3">@character.Name</h1>
-        <img src="@character.Thumbnail" style="width: 400px; height: 500px;">
-    </div>
-}
+<h1>MainCharactersPage</h1>
+
 
 

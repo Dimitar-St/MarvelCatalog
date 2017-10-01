@@ -57,9 +57,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IEfMarvelCatalogDbContext.cs" />
+    <Compile Include="Migrations\201709301759168_Added characters model.cs" />
+    <Compile Include="Migrations\201709301759168_Added characters model.Designer.cs">
+      <DependentUpon>201709301759168_Added characters model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709301908405_ChracterMOdel.cs" />
+    <Compile Include="Migrations\201709301908405_ChracterMOdel.Designer.cs">
+      <DependentUpon>201709301908405_ChracterMOdel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709301914598_CharacterInheritedDataModel.cs" />
+    <Compile Include="Migrations\201709301914598_CharacterInheritedDataModel.Designer.cs">
+      <DependentUpon>201709301914598_CharacterInheritedDataModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709302314599_new migrations.cs" />
+    <Compile Include="Migrations\201709302314599_new migrations.Designer.cs">
+      <DependentUpon>201709302314599_new migrations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="MsSqlDbContext.cs" />
+    <Compile Include="EfMarvelCatalogDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EfRepository.cs" />
+    <Compile Include="Repositories\IEfRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,6 +89,20 @@
       <Project>{B8537839-CA0C-4E51-918C-2842DE6262CF}</Project>
       <Name>Marvel-Catalog-App.Data.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709301759168_Added characters model.resx">
+      <DependentUpon>201709301759168_Added characters model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709301908405_ChracterMOdel.resx">
+      <DependentUpon>201709301908405_ChracterMOdel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709301914598_CharacterInheritedDataModel.resx">
+      <DependentUpon>201709301914598_CharacterInheritedDataModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709302314599_new migrations.resx">
+      <DependentUpon>201709302314599_new migrations.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

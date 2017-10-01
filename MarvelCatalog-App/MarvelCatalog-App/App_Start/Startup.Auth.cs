@@ -17,7 +17,7 @@ namespace MarvelCatalog_App
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
-            app.CreatePerOwinContext(MsSqlDbContext.Create);
+            app.CreatePerOwinContext(EfMarvelCatalogDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 

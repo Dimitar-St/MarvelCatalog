@@ -53,9 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterService.cs" />
-    <Compile Include="Contracts\ICharactersService.cs" />
+    <Compile Include="ComicService.cs" />
+    <Compile Include="Contracts\ICharacterService.cs" />
+    <Compile Include="Contracts\IComicsService.cs" />
     <Compile Include="Contracts\IJSONModelsFactory.cs" />
-    <Compile Include="JSONModelsDactory.cs" />
+    <Compile Include="JSONModelsFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

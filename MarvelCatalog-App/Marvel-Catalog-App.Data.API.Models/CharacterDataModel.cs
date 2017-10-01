@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
-using MarvelCatalog_App.Models;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MarvelCatalog_App.ViewModels
+namespace Marvel_Catalog_App.Data.API.Models
 {
-    public class CharacterViewModel
+    public class CharacterDataModel : DataModel
     {
-        public CharacterViewModel(string name, string image, string description)
+        public CharacterDataModel() { }
+
+        public CharacterDataModel(string name, string image, string description)
         {
             this.Name = name;
             this.Image = image;
             this.Description = description;
         }
-
+        
         public string Name { get; set; }
 
         public string Image { get; set; }

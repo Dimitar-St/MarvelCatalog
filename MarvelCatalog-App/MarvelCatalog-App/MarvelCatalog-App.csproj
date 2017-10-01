@@ -325,9 +325,9 @@
       <Project>{56BA4901-A528-4EF3-9126-F5430F9EE2DE}</Project>
       <Name>MarvelCatalog-App.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MarvelCatalog-App.Services.API\MarvelCatalog-App.Data.API.csproj">
-      <Project>{e68ef5a1-293d-4556-b3e6-df27fd036948}</Project>
-      <Name>MarvelCatalog-App.Data.API</Name>
+    <ProjectReference Include="..\MarvelCatalog-App.Services\MarvelCatalog-App.Services.csproj">
+      <Project>{95F374EC-20C4-4CF2-B270-8EFA2465EC85}</Project>
+      <Name>MarvelCatalog-App.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

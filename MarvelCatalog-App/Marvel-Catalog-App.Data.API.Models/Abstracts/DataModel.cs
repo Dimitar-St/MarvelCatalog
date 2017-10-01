@@ -13,11 +13,10 @@ namespace Marvel_Catalog_App.Data.API.Models
     {
         public DataModel()
         {
-            this.Id = Guid.NewGuid();
         }
 
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public DateTime? CreatedOn { get; set; }
 

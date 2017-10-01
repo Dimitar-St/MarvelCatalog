@@ -44,7 +44,7 @@ namespace MarvelCatalog_App
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
-            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<MsSqlDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<EfMarvelCatalogDbContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<User>(manager)
             {

@@ -3,6 +3,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -12,57 +14,19 @@ namespace Marvel_Catalog_App.Data.API.Models
 {
     public class User : IdentityUser, IAuditable, IDeletable
     {
-        public DateTime? CreatedOn
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public User() { }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        [DataType(DataType.DateTime)]
+        public DateTime? CreatedOn { get; set; }
 
-        public DateTime? DeletedOn
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        [DataType(DataType.DateTime)]
+        public DateTime? DeletedOn { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        [Index]
+        public bool isDeleted { get; set; }
 
-        public bool isDeleted
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public DateTime? ModifiedOn
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        [DataType(DataType.DateTime)]
+        public DateTime? ModifiedOn { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

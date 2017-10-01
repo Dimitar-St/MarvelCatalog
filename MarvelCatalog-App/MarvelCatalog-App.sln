@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App", "Marvel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Tests", "MarvelCatalog-App.Tests\MarvelCatalog-App.Tests.csproj", "{D5DCF442-466A-4ACF-B991-CEC48E32B17C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Data.API", "MarvelCatalog-App.Services.API\MarvelCatalog-App.Data.API.csproj", "{E68EF5A1-293D-4556-B3E6-DF27FD036948}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{41494B18-2477-409E-BA91-3B31151CE2A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5BC62D14-1787-4DFA-88A0-A18DADEACCC6}"
@@ -18,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel-Catalog-App.Data.Models", "Marvel-Catalog-App.Data.API.Models\Marvel-Catalog-App.Data.Models.csproj", "{B8537839-CA0C-4E51-918C-2842DE6262CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Data", "MarvelCatalog-App.Data\MarvelCatalog-App.Data.csproj", "{56BA4901-A528-4EF3-9126-F5430F9EE2DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Services", "MarvelCatalog-App.Services\MarvelCatalog-App.Services.csproj", "{95F374EC-20C4-4CF2-B270-8EFA2465EC85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Common", "MarvelCatalog-App.Common\MarvelCatalog-App.Common.csproj", "{776883CE-1750-4CD7-A6E3-C7ED68C11858}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +35,6 @@ Global
 		{D5DCF442-466A-4ACF-B991-CEC48E32B17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5DCF442-466A-4ACF-B991-CEC48E32B17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5DCF442-466A-4ACF-B991-CEC48E32B17C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E68EF5A1-293D-4556-B3E6-DF27FD036948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E68EF5A1-293D-4556-B3E6-DF27FD036948}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E68EF5A1-293D-4556-B3E6-DF27FD036948}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E68EF5A1-293D-4556-B3E6-DF27FD036948}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8537839-CA0C-4E51-918C-2842DE6262CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8537839-CA0C-4E51-918C-2842DE6262CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8537839-CA0C-4E51-918C-2842DE6262CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +43,14 @@ Global
 		{56BA4901-A528-4EF3-9126-F5430F9EE2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56BA4901-A528-4EF3-9126-F5430F9EE2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56BA4901-A528-4EF3-9126-F5430F9EE2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95F374EC-20C4-4CF2-B270-8EFA2465EC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95F374EC-20C4-4CF2-B270-8EFA2465EC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95F374EC-20C4-4CF2-B270-8EFA2465EC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95F374EC-20C4-4CF2-B270-8EFA2465EC85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{776883CE-1750-4CD7-A6E3-C7ED68C11858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776883CE-1750-4CD7-A6E3-C7ED68C11858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776883CE-1750-4CD7-A6E3-C7ED68C11858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776883CE-1750-4CD7-A6E3-C7ED68C11858}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,8 +58,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{25DCE9B0-AE6E-4DA1-938F-1CBD0C299511} = {41494B18-2477-409E-BA91-3B31151CE2A5}
 		{D5DCF442-466A-4ACF-B991-CEC48E32B17C} = {8CCAB7CA-5ADF-47CA-B332-1291A98E3635}
-		{E68EF5A1-293D-4556-B3E6-DF27FD036948} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
 		{B8537839-CA0C-4E51-918C-2842DE6262CF} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
 		{56BA4901-A528-4EF3-9126-F5430F9EE2DE} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
+		{95F374EC-20C4-4CF2-B270-8EFA2465EC85} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
+		{776883CE-1750-4CD7-A6E3-C7ED68C11858} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
 	EndGlobalSection
 EndGlobal

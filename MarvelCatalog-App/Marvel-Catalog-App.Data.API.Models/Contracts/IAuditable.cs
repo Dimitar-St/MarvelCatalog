@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marvel_Catalog_App.Data.API.Models.Contracts
+namespace Marvel_Catalog_App.Data.Models.Contracts
 {
     public interface IAuditable
     {

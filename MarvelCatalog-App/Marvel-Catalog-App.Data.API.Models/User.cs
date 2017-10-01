@@ -1,4 +1,4 @@
-﻿using Marvel_Catalog_App.Data.API.Models.Contracts;
+﻿using Marvel_Catalog_App.Data.Models.Contracts;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
@@ -10,7 +10,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marvel_Catalog_App.Data.API.Models
+namespace Marvel_Catalog_App.Data.Models
 {
     public class User : IdentityUser, IAuditable, IDeletable
     {

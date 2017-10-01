@@ -7,7 +7,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using MarvelCatalog_App.Models;
 using MarvelCatalog_App.Data;
-using Marvel_Catalog_App.Data.API.Models;
+using Marvel_Catalog_App.Data.Models;
 
 namespace MarvelCatalog_App
 {

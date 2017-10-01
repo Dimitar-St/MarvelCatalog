@@ -1,4 +1,4 @@
-﻿using Marvel_Catalog_App.Data.API.Models.Contracts;
+﻿using Marvel_Catalog_App.Data.Models.Contracts;
 using MarvelCatalog_App.Data.Contracts;
 using MarvelCatalog_App.Data.Repositories;
 using System;

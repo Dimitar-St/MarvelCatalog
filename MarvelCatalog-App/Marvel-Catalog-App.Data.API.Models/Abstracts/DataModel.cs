@@ -1,4 +1,4 @@
-﻿using Marvel_Catalog_App.Data.API.Models.Contracts;
+﻿using Marvel_Catalog_App.Data.Models.Contracts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marvel_Catalog_App.Data.API.Models
+namespace Marvel_Catalog_App.Data.Models
 {
     public abstract class DataModel : IAuditable, IDeletable
     {

@@ -1,4 +1,4 @@
-﻿using Marvel_Catalog_App.Data.API.Models;
+﻿using Marvel_Catalog_App.Data.Models;
 using MarvelCatalog_App.Services;
 using MarvelCatalog_App.ViewModels;
 using System;

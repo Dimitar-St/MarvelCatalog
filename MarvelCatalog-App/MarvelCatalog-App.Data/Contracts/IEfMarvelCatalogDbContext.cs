@@ -1,5 +1,5 @@
-﻿using Marvel_Catalog_App.Data.API.Models;
-using Marvel_Catalog_App.Data.API.Models.Contracts;
+﻿using Marvel_Catalog_App.Data.Models;
+using Marvel_Catalog_App.Data.Models.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

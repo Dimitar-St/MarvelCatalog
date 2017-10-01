@@ -12,7 +12,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using MarvelCatalog_App.Models;
 using MarvelCatalog_App.Data;
-using Marvel_Catalog_App.Data.API.Models;
+using Marvel_Catalog_App.Data.Models;
 
 namespace MarvelCatalog_App
 {

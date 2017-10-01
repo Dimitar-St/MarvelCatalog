@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MarvelCatalog_App.Models;
-using Marvel_Catalog_App.Data.API.Models;
+using Marvel_Catalog_App.Data.Models;
 
 namespace MarvelCatalog_App.Controllers
 {

@@ -7,8 +7,8 @@
     <ProjectGuid>{B8537839-CA0C-4E51-918C-2842DE6262CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Marvel_Catalog_App.Data.API.Models</RootNamespace>
-    <AssemblyName>Marvel-Catalog-App.Data.API.Models</AssemblyName>
+    <RootNamespace>Marvel_Catalog_App.Data.Models</RootNamespace>
+    <AssemblyName>Marvel-Catalog-App.Data.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

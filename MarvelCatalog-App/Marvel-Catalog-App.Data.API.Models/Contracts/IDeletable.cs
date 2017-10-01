@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Marvel_Catalog_App.Data.API.Models.Contracts
+namespace Marvel_Catalog_App.Data.Models.Contracts
 {
     public interface IDeletable
     {

@@ -1,6 +1,6 @@
 namespace MarvelCatalog_App.Data.Migrations
 {
-    using Marvel_Catalog_App.Data.API.Models;
+    using Marvel_Catalog_App.Data.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;

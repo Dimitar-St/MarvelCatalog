@@ -9,7 +9,7 @@ using MarvelCatalog_App.Data.Migrations;
 using MarvelCatalog_App.ViewModels;
 using System.Reflection;
 using MarvelCatalog_App.App_Start;
-using Marvel_Catalog_App.Data.API.Models;
+using Marvel_Catalog_App.Data.Models;
 
 namespace MarvelCatalog_App
 {

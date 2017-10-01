@@ -1,4 +1,5 @@
-﻿using Marvel_Catalog_App.Data.API.Models;
+﻿using Bytes2you.Validation;
+using Marvel_Catalog_App.Data.API.Models;
 using MarvelCatalog_App.Data.Repositories;
 using MarvelCatalog_App.Services.Contracts;
 using System;
@@ -15,6 +16,8 @@ namespace MarvelCatalog_App.Services
 
         public CharacterService(IEfRepository<CharacterDataModel> charatcers)
         {
+            Guard.WhenArgument(charatcers, nameof(charatcers)).IsNull().Throw();
+
             this.characters = charatcers;
         }
 
@@ -28,6 +31,8 @@ namespace MarvelCatalog_App.Services
 
         public CharacterDataModel GetCharacter(string name)
         {
+            Guard.WhenArgument(name, nameof(name)).IsEmpty().IsNull().Throw();
+
             var wantedCharacter = this.characters.All.First(c => c.Name == name);
 
             return wantedCharacter;

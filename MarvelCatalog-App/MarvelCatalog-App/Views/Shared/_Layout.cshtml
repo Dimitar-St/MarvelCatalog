@@ -23,11 +23,7 @@
                 @Html.ActionLink("MC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Comics", "MainComicsPage", "Comics")</li>
-                    <li>@Html.ActionLink("Characters", "MainCharactersPage", "Characters")</li>
-                    <li>@Html.ActionLink("Creators", "MainCreatorsPage", "Creators")</li>
-                </ul>
+                @Html.Partial("_MenuPartial")
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

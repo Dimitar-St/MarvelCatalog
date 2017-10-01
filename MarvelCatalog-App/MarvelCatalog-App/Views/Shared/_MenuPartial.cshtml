@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "_MenuPartial";
+}
+
+@if (System.Web.HttpContext.Current.User.IsInRole("Admin"))
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li style="margin-left: 10px;"><a href="#">Admin</a></li>
+    </ul>
+} else
+{
+   <ul class="nav navbar-nav">
+     <li>@Html.ActionLink("Comics", "MainComicsPage", "Comics")</li>
+     <li>@Html.ActionLink("Characters", "MainCharactersPage", "Characters")</li>
+     <li>@Html.ActionLink("Creators", "MainCreatorsPage", "Creators")</li>
+   </ul>
+}
+

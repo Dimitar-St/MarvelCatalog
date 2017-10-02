@@ -1,6 +1,7 @@
 ﻿using Bytes2you.Validation;
 using Marvel_Catalog_App.Data.Models;
 using MarvelCatalog_App.Data.Repositories;
+using MarvelCatalog_App.Data.UnitOfWork;
 using MarvelCatalog_App.Services.Contracts;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,15 @@ namespace MarvelCatalog_App.Services
     public class CharacterService : ICharacterService
     {
         private readonly IEfRepository<CharacterDataModel> characters;
+        private readonly IUnitOfWork unitOfwork;
 
-        public CharacterService(IEfRepository<CharacterDataModel> charatcers)
+        public CharacterService(IUnitOfWork unitOfWork)
         {
-            Guard.WhenArgument(charatcers, nameof(charatcers)).IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, nameof(unitOfWork)).IsNull().Throw();
+            Guard.WhenArgument(unitOfWork.CharactersRepository, nameof(unitOfWork.CharactersRepository)).IsNull().Throw();
 
-            this.characters = charatcers;
+            this.unitOfwork = unitOfWork;
+            this.characters = unitOfWork.CharactersRepository;
         }
 
         public IEnumerable<CharacterDataModel> GetCharacters()

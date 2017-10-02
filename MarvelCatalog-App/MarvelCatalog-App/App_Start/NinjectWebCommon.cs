@@ -18,6 +18,7 @@ namespace MarvelCatalog_App.App_Start
     using Services.Contracts;
     using Services;
     using Marvel_Catalog_App.Data.Models;
+    using Data.UnitOfWork;
 
     public static class NinjectWebCommon
     {
@@ -72,6 +73,7 @@ namespace MarvelCatalog_App.App_Start
         {
             kernel.Bind<IEfMarvelCatalogDbContext>().To<EfMarvelCatalogDbContext>();
             kernel.Bind<ICharacterService>().To<CharacterService>();
+            kernel.Bind<IUnitOfWork>().To<UnitOfwork>();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
         }
 

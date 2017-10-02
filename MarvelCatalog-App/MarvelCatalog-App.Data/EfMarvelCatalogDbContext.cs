@@ -29,5 +29,32 @@ namespace MarvelCatalog_App.Data
         {
             return base.Set<T>();
         }
+
+        public override int SaveChanges()
+        {
+            this.ApplyAuditableRules();
+
+            return base.SaveChanges();
+        }
+
+        private void ApplyAuditableRules()
+        {
+            var auditables = this.ChangeTracker.Entries()
+                   .Where(e =>
+            e.Entity is IAuditable && ((e.State == EntityState.Added) || (e.State == EntityState.Modified)));
+
+            foreach (var entry in auditables)
+            {
+                var entity = (IAuditable)entry.Entity;
+                if (entry.State == EntityState.Added && entity.CreatedOn == default(DateTime))
+                {
+                    entity.CreatedOn = DateTime.Now;
+                }
+                else
+                {
+                    entity.ModifiedOn = DateTime.Now;
+                }
+            }
+        }
     }
 }

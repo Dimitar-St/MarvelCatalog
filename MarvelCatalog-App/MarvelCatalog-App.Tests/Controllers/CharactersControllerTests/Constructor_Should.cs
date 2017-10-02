@@ -18,8 +18,10 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
         [Test]
         public void Throw_ArgumentNullException_When_IsPassed_ANull_ServiceValue()
         {
+            // Arrange
             var mockedMapper = new Mock<IMapper>();
 
+            // Act & Assert
             Assert.That(() => new CharactersController(null, mockedMapper.Object),
                             Throws.ArgumentNullException.With.Message.Contains("service"));
         }
@@ -27,8 +29,10 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
         [Test]
         public void Throw_ArgumentNullException_When_IsPassed_ANull_MapperValue()
         {
+            // Arrange
             var mockedService = new Mock<ICharacterService>();
 
+            // Act & Assert
             Assert.That(() => new CharactersController(mockedService.Object, null),
                             Throws.ArgumentNullException.With.Message.Contains("mapper"));
         }
@@ -36,9 +40,11 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
         [Test]
         public void NotThrow_ArgumentNullException_When_ArePassed_ValidValues()
         {
+            // Arrange
             var mockedService = new Mock<ICharacterService>();
             var mockedMapper = new Mock<IMapper>();
 
+            // Act & Assert
             Assert.DoesNotThrow(() => new CharactersController(mockedService.Object, mockedMapper.Object));
         }
     }

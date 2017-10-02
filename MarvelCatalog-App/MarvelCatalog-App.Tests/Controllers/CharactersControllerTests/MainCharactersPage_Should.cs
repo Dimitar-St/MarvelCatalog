@@ -16,6 +16,7 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
         [Test]
         public void Call_GetCharactersMethod_FromTheService()
         {
+            // Arrange
             var charactersDataModel = new List<CharacterDataModel>();
             var charactersViewModel = new List<CharacterViewModel>();
 
@@ -30,15 +31,18 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
                          
 
             var characterController = new CharactersController(mockedService.Object, mockedMapper.Object);
-
+            
+            // Act
             characterController.MainCharactersPage();
 
+            // Assert
             mockedService.Verify(service => service.GetCharacters(), Times.Once);
         }
 
         [Test]
         public void Call_MapMethod_FromTheMapper()
         {
+            // Arrange
             var charactersDataModel = new List<CharacterDataModel>();
             var charactersViewModel = new List<CharacterViewModel>();
 
@@ -54,8 +58,10 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
 
             var characterController = new CharactersController(mockedService.Object, mockedMapper.Object);
 
+            // Act
             characterController.MainCharactersPage();
 
+            // Assert
             mockedMapper.Verify(mapper => mapper.Map<IEnumerable<CharacterViewModel>>(It.IsAny<IEnumerable<CharacterDataModel>>()), Times.Once);
         }
     }

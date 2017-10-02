@@ -17,6 +17,7 @@ namespace MarvelCatalog_App.Tests.Services.CharacterServiceTests
         [Test]
         public void Throw_ArgumentNullException_When_IEfRepository_IsNull()
         {
+            // Arrang & Act & Assert
             Assert.That(() => new CharacterService(null),
                         Throws.ArgumentNullException.With.Message.Contains("charatcers")); 
         }
@@ -24,8 +25,10 @@ namespace MarvelCatalog_App.Tests.Services.CharacterServiceTests
         [Test]
         public void NotThrow_ArgumentNullException_When_AValid_ArgumentIsPassed()
         {
+            // Arrange
             var mockEfRepository = new Mock<IEfRepository<CharacterDataModel>>();
 
+            // Act & Assert
             Assert.DoesNotThrow(() => new CharacterService(mockEfRepository.Object));
         }
     }

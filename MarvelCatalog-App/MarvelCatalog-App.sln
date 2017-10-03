@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Data", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Services", "MarvelCatalog-App.Services\MarvelCatalog-App.Services.csproj", "{95F374EC-20C4-4CF2-B270-8EFA2465EC85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCatalog-App.Common", "MarvelCatalog-App.Common\MarvelCatalog-App.Common.csproj", "{776883CE-1750-4CD7-A6E3-C7ED68C11858}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{95F374EC-20C4-4CF2-B270-8EFA2465EC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95F374EC-20C4-4CF2-B270-8EFA2465EC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95F374EC-20C4-4CF2-B270-8EFA2465EC85}.Release|Any CPU.Build.0 = Release|Any CPU
-		{776883CE-1750-4CD7-A6E3-C7ED68C11858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{776883CE-1750-4CD7-A6E3-C7ED68C11858}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{776883CE-1750-4CD7-A6E3-C7ED68C11858}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{776883CE-1750-4CD7-A6E3-C7ED68C11858}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +55,5 @@ Global
 		{B8537839-CA0C-4E51-918C-2842DE6262CF} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
 		{56BA4901-A528-4EF3-9126-F5430F9EE2DE} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
 		{95F374EC-20C4-4CF2-B270-8EFA2465EC85} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
-		{776883CE-1750-4CD7-A6E3-C7ED68C11858} = {5BC62D14-1787-4DFA-88A0-A18DADEACCC6}
 	EndGlobalSection
 EndGlobal

@@ -62,14 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IEfMarvelCatalogDbContext.cs" />
-    <Compile Include="Migrations\201710031110310_added new data model.cs" />
-    <Compile Include="Migrations\201710031110310_added new data model.Designer.cs">
-      <DependentUpon>201710031110310_added new data model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710031139499_new field to the creators data model.cs" />
-    <Compile Include="Migrations\201710031139499_new field to the creators data model.Designer.cs">
-      <DependentUpon>201710031139499_new field to the creators data model.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="EfMarvelCatalogDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,14 +79,6 @@
       <Project>{B8537839-CA0C-4E51-918C-2842DE6262CF}</Project>
       <Name>Marvel-Catalog-App.Data.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710031110310_added new data model.resx">
-      <DependentUpon>201710031110310_added new data model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710031139499_new field to the creators data model.resx">
-      <DependentUpon>201710031139499_new field to the creators data model.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

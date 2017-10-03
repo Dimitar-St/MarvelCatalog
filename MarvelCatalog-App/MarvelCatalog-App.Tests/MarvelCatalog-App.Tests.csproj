@@ -106,12 +106,14 @@
     <Compile Include="Controllers\CharactersControllerTests\GivenCharacterPage_Should.cs" />
     <Compile Include="Controllers\CharactersControllerTests\MainCharactersPage_Should.cs" />
     <Compile Include="Controllers\ComicsControllerTests\Constructor_Should.cs" />
+    <Compile Include="Controllers\ComicsControllerTests\GivenComicsPage_Should.cs" />
     <Compile Include="Controllers\ComicsControllerTests\MainComicsPage_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\CharacterServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\CharacterServiceTests\GetCharacters_Should.cs" />
     <Compile Include="Services\CharacterServiceTests\GetCharacter_Should.cs" />
+    <Compile Include="Services\ComicsServiceTests\Constructor_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

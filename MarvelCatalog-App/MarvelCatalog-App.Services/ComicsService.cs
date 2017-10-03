@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Marvel_Catalog_App.Data.Models;
 using MarvelCatalog_App.Data.Repositories;
+using Bytes2you.Validation;
 
 namespace MarvelCatalog_App.Services
 {
@@ -17,6 +18,9 @@ namespace MarvelCatalog_App.Services
 
         public ComicsService(IUnitOfWork unitOfwork)
         {
+            Guard.WhenArgument(unitOfWork, nameof(unitOfWork)).IsNull().Throw();
+            Guard.WhenArgument(unitOfWork.ComicsRepository, nameof(unitOfWork.ComicsRepository)).IsNull().Throw();
+
             this.unitOfWork = unitOfwork;
             this.comics = unitOfwork.ComicsRepository;
         }
@@ -24,7 +28,7 @@ namespace MarvelCatalog_App.Services
         public IEnumerable<ComicsDataModel> GetComics()
         {
             var wantedComics = this.comics.All
-             .Where(comic => comic.isDeleted != false || comic.isDeleted != null);
+             .Where(comic => comic.isDeleted == false);
 
             return wantedComics;
         }

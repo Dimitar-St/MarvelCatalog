@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bytes2you.Validation;
 using MarvelCatalog_App.Services.Contracts;
 using MarvelCatalog_App.ViewModels;
 using System;
@@ -16,6 +17,9 @@ namespace MarvelCatalog_App.Controllers
 
         public ComicsController(IComicsService comicsService, IMapper mapper)
         {
+            Guard.WhenArgument(comicsService, nameof(comicsService)).IsNull().Throw();
+            Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
+
             this.comicsService = comicsService;
             this.mapper = mapper;
         }

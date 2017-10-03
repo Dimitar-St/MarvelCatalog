@@ -74,6 +74,7 @@ namespace MarvelCatalog_App.App_Start
             kernel.Bind<IEfMarvelCatalogDbContext>().To<EfMarvelCatalogDbContext>();
             kernel.Bind<ICharacterService>().To<CharacterService>();
             kernel.Bind<IComicsService>().To<ComicsService>();
+            kernel.Bind<ICreatorsService>().To<CreatorsService>();
             kernel.Bind<IUnitOfWork>().To<UnitOfwork>();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
         }
@@ -85,6 +86,7 @@ namespace MarvelCatalog_App.App_Start
                             {
                                 c.CreateMap<CharacterDataModel, CharacterViewModel>();
                                 c.CreateMap<ComicsDataModel, ComicsViewModel>();
+                                c.CreateMap<CreatorsDataModel, CreatorViewModel>();
                             });
 
             var mapper = config.CreateMapper();

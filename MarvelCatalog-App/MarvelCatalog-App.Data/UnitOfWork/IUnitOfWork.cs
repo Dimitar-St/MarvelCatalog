@@ -15,5 +15,7 @@ namespace MarvelCatalog_App.Data.UnitOfWork
         IEfRepository<CharacterDataModel> CharactersRepository { get; }
 
         IEfRepository<ComicsDataModel> ComicsRepository { get; }
+
+        IEfRepository<CreatorsDataModel> CreatorsRepository { get; }
     }
 }

@@ -47,13 +47,13 @@ namespace MarvelCatalog_App.Data.Migrations
             }
         }
 
-        private void SeedSampleComics(EfMarvelCatalogDbContext context)
+        private void SeedSampleCreators(EfMarvelCatalogDbContext context)
         {
                 var description = "Gillen cited inspiration from I, Claudius,[6] The Godfather,[7] and the TV series House of Cards in portraying the internal machinations of the Empire. If Jason Aaron's concurrent Star Wars comic depicts Vader on 'a Tuesday,' then Gillen's series shows the relatively mundane politics he must grapple with during the rest of the week. He mentioned Vader's antagonists include the military officials who do not believe in the Force.[1]";
                 
-                var comics = new ComicsDataModel("DARTH VADER", "https://i.annihil.us/u/prod/marvel/i/mg/3/20/59cc06221f165/detail.jpg", description, 3.99, new List<CharacterDataModel>(), new Dictionary<string, string>());
+                var creator = new CreatorsDataModel("Jessica Abel", "https://upload.wikimedia.org/wikipedia/commons/3/38/JessicaAbel4-29-11.jpg", 40, description, "Career", new Dictionary<string, string>());
 
-                context.Comics.Add(comics);
+                context.Creators.Add(creator);
 
                 context.SaveChanges();
         }
@@ -74,7 +74,7 @@ namespace MarvelCatalog_App.Data.Migrations
             //
 
             //this.SeedUsers(context);
-            //this.SeedSampleComics(context);
+            //this.SeedSampleCreators(context);
         }
     }
 }

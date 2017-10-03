@@ -9,14 +9,16 @@ namespace MarvelCatalog_App.Data.UnitOfWork
     {
         private readonly IEfRepository<CharacterDataModel> characterRepository;
         private readonly IEfRepository<ComicsDataModel> comicsRepository;
+        private readonly IEfRepository<CreatorsDataModel> creatorsRepository;
         private readonly IEfMarvelCatalogDbContext dbContext;
 
         public UnitOfwork(IEfMarvelCatalogDbContext dbContext, IEfRepository<CharacterDataModel> charactersRepository,
-                          IEfRepository<ComicsDataModel> comicsRepository)
+                          IEfRepository<ComicsDataModel> comicsRepository, IEfRepository<CreatorsDataModel> creatorsRepository)
         {
             this.dbContext = dbContext;
             this.characterRepository = charactersRepository;
             this.comicsRepository = comicsRepository;
+            this.creatorsRepository = creatorsRepository;
         }
 
         public IEfRepository<CharacterDataModel> CharactersRepository
@@ -34,7 +36,15 @@ namespace MarvelCatalog_App.Data.UnitOfWork
                 return this.comicsRepository;
             }
         }
-        
+
+        public IEfRepository<CreatorsDataModel> CreatorsRepository
+        {
+            get
+            {
+                return this.creatorsRepository;
+            }
+        }
+
         public void Dispose()
         {
             throw new NotImplementedException();

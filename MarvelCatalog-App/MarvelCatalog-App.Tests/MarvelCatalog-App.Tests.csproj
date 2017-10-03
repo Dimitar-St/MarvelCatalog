@@ -109,6 +109,7 @@
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\CharacterServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\CharacterServiceTests\GetCharacters_Should.cs" />
+    <Compile Include="Services\CharacterServiceTests\GetCharacter_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

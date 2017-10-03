@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterDataModel.cs" />
+    <Compile Include="ComicsDataModel.cs" />
     <Compile Include="Contracts\IAuditable.cs" />
     <Compile Include="Contracts\IDeletable.cs" />
     <Compile Include="Abstracts\DataModel.cs" />

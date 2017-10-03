@@ -1,7 +1,25 @@
-﻿
+﻿@model IEnumerable<MarvelCatalog_App.ViewModels.ComicsViewModel>
 @{
     ViewBag.Title = "MainComicsPage";
 }
 
-<h2>MainComicsPage</h2>
+@foreach (var comic in Model)
+{
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>@comic.Title</h2>
+                    <div class="details">
+                        <h4><b>Desciption:</b> @comic.Description.Substring(0, 30) ....</h4>
+                    </div>
+                </div>
+                <div class="pull-right image-container">
+                    <img src="@comic.Image" style="height: 400px; width: 250px;">
+                </div>
+                @Html.ActionLink("Show more ...", "GivenComicsPage", "Comics", new { name = comic.Title }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+}
 

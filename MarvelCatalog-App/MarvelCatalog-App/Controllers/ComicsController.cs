@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
+using MarvelCatalog_App.Services.Contracts;
+using MarvelCatalog_App.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +11,31 @@ namespace MarvelCatalog_App.Controllers
 {
     public class ComicsController : Controller
     {
-        public ComicsController() { }
+        private readonly IMapper mapper;
+        private readonly IComicsService comicsService;
+
+        public ComicsController(IComicsService comicsService, IMapper mapper)
+        {
+            this.comicsService = comicsService;
+            this.mapper = mapper;
+        }
 
         public ActionResult MainComicsPage()
         {
-            return base.View();
+            var comics = this.comicsService.GetComics();
+
+            var comicsViewModel = this.mapper.Map<IEnumerable<ComicsViewModel>>(comics);
+
+            return base.View(comicsViewModel);
+        }
+
+        public ActionResult GivenComicsPage(string name)
+        {
+            var comic = this.comicsService.GetComic(name);
+
+            ComicsViewModel comicViewModel = this.mapper.Map<ComicsViewModel>(comic);
+
+            return this.View(comicViewModel);
         }
     }
 }

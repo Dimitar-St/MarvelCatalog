@@ -45,7 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterService.cs" />
+    <Compile Include="ComicsService.cs" />
     <Compile Include="Contracts\ICharacterService.cs" />
+    <Compile Include="Contracts\IComicsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,8 @@ namespace MarvelCatalog_App.Data.Contracts
     {
         IDbSet<CharacterDataModel> Characters { get; set; }
 
+        IDbSet<ComicsDataModel> Comics { get; set; }
+
         IDbSet<T> GetSet<T>() where T : class, IDeletable;
 
         int SaveChanges();

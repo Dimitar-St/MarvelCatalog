@@ -78,6 +78,14 @@
     <Compile Include="Migrations\201709302314599_new migrations.Designer.cs">
       <DependentUpon>201709302314599_new migrations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710022124543_Added new data model.cs" />
+    <Compile Include="Migrations\201710022124543_Added new data model.Designer.cs">
+      <DependentUpon>201710022124543_Added new data model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710022136402_initial.cs" />
+    <Compile Include="Migrations\201710022136402_initial.Designer.cs">
+      <DependentUpon>201710022136402_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="EfMarvelCatalogDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +116,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709302314599_new migrations.resx">
       <DependentUpon>201709302314599_new migrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710022124543_Added new data model.resx">
+      <DependentUpon>201710022124543_Added new data model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710022136402_initial.resx">
+      <DependentUpon>201710022136402_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

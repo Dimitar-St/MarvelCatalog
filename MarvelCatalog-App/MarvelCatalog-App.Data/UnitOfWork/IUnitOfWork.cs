@@ -13,5 +13,7 @@ namespace MarvelCatalog_App.Data.UnitOfWork
         void SaveChanges();
 
         IEfRepository<CharacterDataModel> CharactersRepository { get; }
+
+        IEfRepository<ComicsDataModel> ComicsRepository { get; }
     }
 }

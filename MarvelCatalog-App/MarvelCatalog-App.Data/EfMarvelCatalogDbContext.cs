@@ -20,6 +20,8 @@ namespace MarvelCatalog_App.Data
 
         public IDbSet<CharacterDataModel> Characters { get; set; }
 
+        public IDbSet<ComicsDataModel> Comics { get; set; }
+
         public static EfMarvelCatalogDbContext Create()
         {
             return new EfMarvelCatalogDbContext();

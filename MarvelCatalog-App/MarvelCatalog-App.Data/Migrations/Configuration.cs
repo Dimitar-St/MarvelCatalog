@@ -4,6 +4,7 @@ namespace MarvelCatalog_App.Data.Migrations
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -46,14 +47,13 @@ namespace MarvelCatalog_App.Data.Migrations
             }
         }
 
-        private void SeedSampleCharacter(EfMarvelCatalogDbContext context)
+        private void SeedSampleComics(EfMarvelCatalogDbContext context)
         {
-                var description = "Captain America is a fictional character appearing in American comic books published by Marvel Comics. Created by cartoonists Joe Simon and Jack Kirby, the character first appeared in Captain America Comics #1 (cover dated March 1941) from Timely Comics, a predecessor of Marvel Comics. Captain America was designed as a patriotic supersoldier who often fought the Axis powers of World War II and was Timely Comics' most popular character during the wartime period. The popularity of superheroes waned following the war and the Captain America comic book was discontinued in 1950, with a short-lived revival in 1953. Since Marvel Comics revived the character in 1964, Captain America has remained in publication.";
-                var image = "http://2.bp.blogspot.com/-rWsaHLobnvw/Uu7cWqDZNqI/AAAAAAAAOI0/XBQswsvR2Xc/s1600/Captain-America-The-Winter-Soldier.png";
+                var description = "Gillen cited inspiration from I, Claudius,[6] The Godfather,[7] and the TV series House of Cards in portraying the internal machinations of the Empire. If Jason Aaron's concurrent Star Wars comic depicts Vader on 'a Tuesday,' then Gillen's series shows the relatively mundane politics he must grapple with during the rest of the week. He mentioned Vader's antagonists include the military officials who do not believe in the Force.[1]";
+                
+                var comics = new ComicsDataModel("DARTH VADER", "https://i.annihil.us/u/prod/marvel/i/mg/3/20/59cc06221f165/detail.jpg", description, 3.99, new List<CharacterDataModel>(), new Dictionary<string, string>());
 
-                var character = new CharacterDataModel("Captian America", description, image);
-
-                context.Characters.Add(character);
+                context.Comics.Add(comics);
 
                 context.SaveChanges();
         }
@@ -74,7 +74,7 @@ namespace MarvelCatalog_App.Data.Migrations
             //
 
             //this.SeedUsers(context);
-            //this.SeedSampleCharacter(context);
+            //this.SeedSampleComics(context);
         }
     }
 }

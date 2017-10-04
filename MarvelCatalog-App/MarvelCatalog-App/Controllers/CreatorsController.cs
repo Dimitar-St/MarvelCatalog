@@ -20,6 +20,7 @@ namespace MarvelCatalog_App.Controllers
             this.mapper = mapper;
         }
 
+        [HttpGet]
         public ActionResult MainCreatorsPage()
         {
             var creatersDataModel = this.service.GetCreators();

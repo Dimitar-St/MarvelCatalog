@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bytes2you.Validation;
 using MarvelCatalog_App.Areas.Admin.Models;
 using MarvelCatalog_App.Services.Contracts;
 using MarvelCatalog_App.ViewModels;
@@ -18,6 +19,9 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
 
         public CharactersAdministrationController(ICharacterService service, IMapper mapper)
         {
+            Guard.WhenArgument(service, nameof(service)).IsNull().Throw();
+            Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
+
             this.service = service;
             this.mapper = mapper;
         }
@@ -27,6 +31,7 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             return this.View();
         }
 
+        [HttpGet]
         public ActionResult GetAllCharacters()
         {
             var allCharacters = this.service.GetAllCharactersAdministration();
@@ -36,6 +41,7 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             return this.View(characterDataModel);
         }
 
+        [HttpGet]
         public ActionResult GetCharacterById(int id)
         {
             var characterDataModel = this.service.GetCharacterById(id);

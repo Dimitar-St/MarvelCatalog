@@ -26,6 +26,7 @@ namespace MarvelCatalog_App.Controllers
             this.mapper = mapper;
         }
         
+        [HttpGet]
         public ActionResult MainCharactersPage()
         {
             var charactersData = this.service.GetCharacters();
@@ -33,8 +34,9 @@ namespace MarvelCatalog_App.Controllers
             IEnumerable<CharacterViewModel> characters = this.mapper.Map<IEnumerable<CharacterViewModel>>(charactersData);
 
             return base.View(characters);
-        } 
+        }
 
+        [HttpGet]
         public ActionResult GivenCharacterPage(string name)
         {
             var characterData = this.service.GetCharacter(name);

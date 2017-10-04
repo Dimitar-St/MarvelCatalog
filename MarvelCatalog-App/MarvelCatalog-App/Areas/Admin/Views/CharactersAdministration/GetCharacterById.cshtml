@@ -1,7 +1,22 @@
-﻿
+﻿@model MarvelCatalog_App.Areas.Admin.Models.CharactersAdminViewModel
 @{
     ViewBag.Title = "GetCharacterById";
 }
 
-<h2>GetCharacterById</h2>
-
+<div class="container" *ngFor="let crimeMovie of crimeMovies">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="usr">Name:</label>
+                    <input type="text" class="form-control" placeholder="@Model.Name">
+                </div>
+                <div class="form-group">
+                    <label for="usr">Name:</label>
+                    <textarea class="form-control" id="exampleTextarea" rows="3">@Model.Description</textarea>
+                </div>
+                <a class="btn btn-primary">Submit changes</a>
+            </div>
+          </div>
+    </div>
+</div>

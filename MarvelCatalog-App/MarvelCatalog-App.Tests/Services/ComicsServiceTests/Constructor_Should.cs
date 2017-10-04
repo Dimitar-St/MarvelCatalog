@@ -30,7 +30,7 @@ namespace MarvelCatalog_App.Tests.Services.ComicsServiceTests
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
             IEfRepository<ComicsDataModel> invalidRepo = null;
 
-            mockedUnitOfWork.SetupGet(unit => unit.ComicsRepository).Returns(invalidRepo);
+            mockedUnitOfWork.Setup(unit => unit.ComicsRepository).Returns(invalidRepo);
 
             // Act & Assert
             Assert.That(() => new ComicsService(mockedUnitOfWork.Object),

@@ -24,6 +24,7 @@ namespace MarvelCatalog_App.Controllers
             this.mapper = mapper;
         }
 
+        [HttpGet]
         public ActionResult MainComicsPage()
         {
             var comics = this.comicsService.GetComics();
@@ -33,6 +34,7 @@ namespace MarvelCatalog_App.Controllers
             return base.View(comicsViewModel);
         }
 
+        [HttpGet]
         public ActionResult GivenComicsPage(string name)
         {
             var comic = this.comicsService.GetComic(name);

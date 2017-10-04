@@ -40,5 +40,20 @@ namespace MarvelCatalog_App.Services
             return wantedCharacter;
         }
 
+        public IEnumerable<CharacterDataModel> GetAllCharactersAdministration()
+        {
+            var wantedCharacters =
+                this.characters.All.Where(c => c.isDeleted == false || c.isDeleted == true);
+
+            return wantedCharacters;
+        }
+
+        public CharacterDataModel GetCharacterById(int id)
+        {
+            var character = this.characters.All.FirstOrDefault(c => c.Id == id);
+
+            return character;
+        }
+
     }
 }

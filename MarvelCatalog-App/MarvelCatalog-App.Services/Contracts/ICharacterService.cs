@@ -12,5 +12,9 @@ namespace MarvelCatalog_App.Services.Contracts
         IEnumerable<CharacterDataModel> GetCharacters();
 
         CharacterDataModel GetCharacter(string name);
+
+        IEnumerable<CharacterDataModel> GetAllCharactersAdministration();
+
+        CharacterDataModel GetCharacterById(int id);
     }
 }

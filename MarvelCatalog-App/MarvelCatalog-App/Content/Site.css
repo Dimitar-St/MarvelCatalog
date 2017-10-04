@@ -27,3 +27,7 @@ textarea {
     height: 45px;
     width: 100px;
 }
+
+.container .admin-characters-table {
+    margin-right: 1000px;
+}

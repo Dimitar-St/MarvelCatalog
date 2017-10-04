@@ -19,6 +19,7 @@ namespace MarvelCatalog_App.App_Start
     using Services;
     using Marvel_Catalog_App.Data.Models;
     using Data.UnitOfWork;
+    using Areas.Admin.Models;
 
     public static class NinjectWebCommon
     {
@@ -87,6 +88,7 @@ namespace MarvelCatalog_App.App_Start
                                 c.CreateMap<CharacterDataModel, CharacterViewModel>();
                                 c.CreateMap<ComicsDataModel, ComicsViewModel>();
                                 c.CreateMap<CreatorsDataModel, CreatorViewModel>();
+                                c.CreateMap<CharacterDataModel, CharactersAdminViewModel>();
                             });
 
             var mapper = config.CreateMapper();

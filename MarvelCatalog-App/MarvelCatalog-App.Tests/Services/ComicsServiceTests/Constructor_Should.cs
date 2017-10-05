@@ -15,25 +15,24 @@ namespace MarvelCatalog_App.Tests.Services.ComicsServiceTests
     [TestFixture]
     public class Constructor_Should
     {
-        [Test]
         public void Throw_ArgumentNullException_When_UnitOfWork_IsNull()
         {
+            var mockedRepo = new Mock<IEfRepository<ComicsDataModel>>();
+
             // Arrang & Act & Assert
-            Assert.That(() => new ComicsService(null),
+            Assert.That(() => new ComicsService(null, mockedRepo.Object),
                         Throws.ArgumentNullException.With.Message.Contains("unitOfWork"));
         }
-
-        [Test]
+        
         public void Throw_ArgumentNullException_When_IEfRepository_IsNull()
         {
             // Arrange
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
             IEfRepository<ComicsDataModel> invalidRepo = null;
-
-            mockedUnitOfWork.Setup(unit => unit.ComicsRepository).Returns(invalidRepo);
+            
 
             // Act & Assert
-            Assert.That(() => new ComicsService(mockedUnitOfWork.Object),
+            Assert.That(() => new ComicsService(mockedUnitOfWork.Object, null),
                                 Throws.ArgumentNullException.With.Message.Contains("unitOfWork"));
         }
     }

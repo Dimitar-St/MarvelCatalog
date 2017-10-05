@@ -45,5 +45,12 @@ namespace MarvelCatalog_App.Controllers
 
             return this.View(characterViewModel);
         }
+
+        public void AddToFavorites(int characterId)
+        {
+            var character = this.service.GetCharacterById(characterId);
+
+
+        }
     }
 }

@@ -48,9 +48,11 @@
     <Compile Include="ComicsService.cs" />
     <Compile Include="Contracts\ICharacterService.cs" />
     <Compile Include="Contracts\IComicsService.cs" />
+    <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="CreatorsService.cs" />
     <Compile Include="Contracts\ICreatorsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marvel-Catalog-App.Data.API.Models\Marvel-Catalog-App.Data.Models.csproj">

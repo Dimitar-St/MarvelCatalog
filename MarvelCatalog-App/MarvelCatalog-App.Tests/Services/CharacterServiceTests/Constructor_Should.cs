@@ -18,8 +18,10 @@ namespace MarvelCatalog_App.Tests.Services.CharacterServiceTests
         [Test]
         public void Throw_ArgumentNullException_When_UnitOfWork_IsNull()
         {
-            // Arrang & Act & Assert
-            Assert.That(() => new CharacterService(null),
+            var mockedCharacterRepo = new Mock<IEfRepository<CharacterDataModel>>();
+
+            // Act & Assert
+            Assert.That(() => new CharacterService(null, mockedCharacterRepo.Object),
                         Throws.ArgumentNullException.With.Message.Contains("unitOfWork")); 
         }
 
@@ -29,12 +31,10 @@ namespace MarvelCatalog_App.Tests.Services.CharacterServiceTests
             // Arrange
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
             IEfRepository<CharacterDataModel> invalidRepo = null;
-
-            mockedUnitOfWork.SetupGet(unit => unit.CharactersRepository).Returns(invalidRepo);
             
             // Act & Assert
-            Assert.That(() => new CharacterService(mockedUnitOfWork.Object),
-                                Throws.ArgumentNullException.With.Message.Contains("CharactersRepository"));
+            Assert.That(() => new CharacterService(mockedUnitOfWork.Object, invalidRepo),
+                                Throws.ArgumentNullException.With.Message.Contains("charactersRepository"));
         }
 
         [Test]
@@ -43,11 +43,9 @@ namespace MarvelCatalog_App.Tests.Services.CharacterServiceTests
             // Arrange
             var mockedUnitOfwork = new Mock<IUnitOfWork>();
             var mockedRepo = new Mock<IEfRepository<CharacterDataModel>>();
-
-            mockedUnitOfwork.SetupGet(unit => unit.CharactersRepository).Returns(mockedRepo.Object);
-
+            
             // Act & Assert
-            Assert.DoesNotThrow(() => new CharacterService(mockedUnitOfwork.Object));
+            Assert.DoesNotThrow(() => new CharacterService(mockedUnitOfwork.Object, mockedRepo.Object));
         }
     }
 }

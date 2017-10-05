@@ -14,7 +14,11 @@ namespace Marvel_Catalog_App.Data.Models
 {
     public class User : IdentityUser, IAuditable, IDeletable
     {
-        public User() { }
+        public User()
+        {
+            this.FavoritesCharacters = new List<CharacterDataModel>();
+            this.FavoritesComics = new List<ComicsDataModel>();
+        }
 
         [DataType(DataType.DateTime)]
         public DateTime? CreatedOn { get; set; }
@@ -27,6 +31,10 @@ namespace Marvel_Catalog_App.Data.Models
 
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
+
+        public ICollection<CharacterDataModel> FavoritesCharacters { get; set; }
+
+        public ICollection<ComicsDataModel> FavoritesComics { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

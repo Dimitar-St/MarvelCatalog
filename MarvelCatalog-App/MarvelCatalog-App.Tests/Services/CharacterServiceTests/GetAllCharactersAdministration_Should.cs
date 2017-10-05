@@ -24,10 +24,9 @@ namespace MarvelCatalog_App.Tests.Services.CharacterServiceTests
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
             var mockedRepo = new Mock<IEfRepository<CharacterDataModel>>();
 
-            mockedUnitOfWork.Setup(unit => unit.CharactersRepository).Returns(mockedRepo.Object);
             mockedRepo.Setup(repo => repo.All).Returns(characters);
 
-            var characterService = new CharacterService(mockedUnitOfWork.Object);
+            var characterService = new CharacterService(mockedUnitOfWork.Object, mockedRepo.Object);
 
             // Act
             characterService.GetAllCharactersAdministration();
@@ -47,11 +46,10 @@ namespace MarvelCatalog_App.Tests.Services.CharacterServiceTests
 
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
             var mockedRepo = new Mock<IEfRepository<CharacterDataModel>>();
-
-            mockedUnitOfWork.Setup(unit => unit.CharactersRepository).Returns(mockedRepo.Object);
+            
             mockedRepo.Setup(repo => repo.All).Returns(characters);
 
-            var characterService = new CharacterService(mockedUnitOfWork.Object);
+            var characterService = new CharacterService(mockedUnitOfWork.Object, mockedRepo.Object);
 
             // Act
             var charactersData = characterService.GetAllCharactersAdministration();

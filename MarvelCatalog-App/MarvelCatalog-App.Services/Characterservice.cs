@@ -14,13 +14,13 @@ namespace MarvelCatalog_App.Services
         private readonly IEfRepository<CharacterDataModel> characters;
         private readonly IUnitOfWork unitOfwork;
 
-        public CharacterService(IUnitOfWork unitOfWork)
+        public CharacterService(IUnitOfWork unitOfWork, IEfRepository<CharacterDataModel> charactersRepository)
         {
             Guard.WhenArgument(unitOfWork, nameof(unitOfWork)).IsNull().Throw();
-            Guard.WhenArgument(unitOfWork.CharactersRepository, nameof(unitOfWork.CharactersRepository)).IsNull().Throw();
+            Guard.WhenArgument(charactersRepository, nameof(charactersRepository)).IsNull().Throw();
 
             this.unitOfwork = unitOfWork;
-            this.characters = unitOfWork.CharactersRepository;
+            this.characters = charactersRepository;
         }
 
         public IEnumerable<CharacterDataModel> GetCharacters()

@@ -14,10 +14,10 @@ namespace MarvelCatalog_App.Services
         private readonly IEfRepository<CreatorsDataModel> creatorsRepository;
         private readonly IUnitOfWork unitOfWork;
 
-        public CreatorsService(IUnitOfWork unitOfWork)
+        public CreatorsService(IUnitOfWork unitOfWork, IEfRepository<CreatorsDataModel> creatorsRepository)
         {
             this.unitOfWork = unitOfWork;
-            this.creatorsRepository = unitOfWork.CreatorsRepository;
+            this.creatorsRepository = creatorsRepository;
         }
 
         public IEnumerable<CreatorsDataModel> GetCreators()

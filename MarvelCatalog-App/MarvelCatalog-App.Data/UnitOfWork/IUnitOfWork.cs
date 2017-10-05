@@ -10,12 +10,6 @@ namespace MarvelCatalog_App.Data.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {
-        void SaveChanges();
-
-        IEfRepository<CharacterDataModel> CharactersRepository { get; }
-
-        IEfRepository<ComicsDataModel> ComicsRepository { get; }
-
-        IEfRepository<CreatorsDataModel> CreatorsRepository { get; }
+        int SaveChanges();
     }
 }

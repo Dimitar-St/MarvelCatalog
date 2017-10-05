@@ -16,13 +16,13 @@ namespace MarvelCatalog_App.Services
         private readonly IEfRepository<ComicsDataModel> comics;
         private readonly IUnitOfWork unitOfWork;
 
-        public ComicsService(IUnitOfWork unitOfwork)
+        public ComicsService(IUnitOfWork unitOfwork, IEfRepository<ComicsDataModel> comicsRepository)
         {
-            Guard.WhenArgument(unitOfWork, nameof(unitOfWork)).IsNull().Throw();
-            Guard.WhenArgument(unitOfWork.ComicsRepository, nameof(unitOfWork.ComicsRepository)).IsNull().Throw();
+            //Guard.WhenArgument(unitOfWork, nameof(unitOfWork)).IsNull().Throw();
+            //Guard.WhenArgument(unitOfWork.ComicsRepository, nameof(unitOfWork.ComicsRepository)).IsNull().Throw();
 
             this.unitOfWork = unitOfwork;
-            this.comics = unitOfwork.ComicsRepository;
+            this.comics = comicsRepository;
         }
 
         public IEnumerable<ComicsDataModel> GetComics()

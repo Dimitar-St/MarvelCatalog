@@ -112,6 +112,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\CharacterServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\CharacterServiceTests\GetAllCharactersAdministration_Should.cs" />
+    <Compile Include="Services\CharacterServiceTests\GetCharacterById_Should.cs" />
     <Compile Include="Services\CharacterServiceTests\GetCharacters_Should.cs" />
     <Compile Include="Services\CharacterServiceTests\GetCharacter_Should.cs" />
     <Compile Include="Services\ComicsServiceTests\Constructor_Should.cs" />

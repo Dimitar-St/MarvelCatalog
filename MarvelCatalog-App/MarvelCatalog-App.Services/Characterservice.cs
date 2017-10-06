@@ -55,5 +55,14 @@ namespace MarvelCatalog_App.Services
             return character;
         }
 
+        public void AddCharacter(CharacterDataModel character)
+        {
+            Guard.WhenArgument(character, nameof(character)).IsNull().Throw();
+
+            this.characters.Add(character);
+
+            this.unitOfwork.SaveChanges();
+        }
+
     }
 }

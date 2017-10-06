@@ -13,7 +13,6 @@ namespace MarvelCatalog_App.Services
 
         public void AddToFavoritesCharacters(CharacterDataModel character)
         {
-
         }
     }
 }

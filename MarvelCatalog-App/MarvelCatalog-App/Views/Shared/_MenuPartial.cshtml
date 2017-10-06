@@ -11,7 +11,7 @@
             <ul class="dropdown-menu" role="menu">
                 <li>@Html.ActionLink("All", "GetAllCharacters", "CharactersAdministration", new { area = "Admin" }, htmlAttributes: new { title = "Manage" })</li>
                 <li class="divider"></li>
-                <li><a>Add Character</a></li>
+                <li>@Html.ActionLink("Add Character", "AddCharacter", "CharactersAdministration", new { area = "Admin" }, htmlAttributes: new { title = "Manage" })</li>
                 <li><a>Remove Character</a></li>
             </ul>
         </li>

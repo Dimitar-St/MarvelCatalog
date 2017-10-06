@@ -8,6 +8,8 @@ namespace MarvelCatalog_App.ViewModels
 {
     public class CharacterViewModel
     {
+        public CharacterViewModel() { }
+
         public CharacterViewModel(string name, string image, string description)
         {
             this.Name = name;

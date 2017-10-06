@@ -72,7 +72,7 @@ namespace MarvelCatalog_App.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IEfMarvelCatalogDbContext>().To<EfMarvelCatalogDbContext>();
+            kernel.Bind<IEfMarvelCatalogDbContext>().To<EfMarvelCatalogDbContext>().InSingletonScope();
             kernel.Bind<ICharacterService>().To<CharacterService>();
             kernel.Bind<IComicsService>().To<ComicsService>();
             kernel.Bind<ICreatorsService>().To<CreatorsService>();

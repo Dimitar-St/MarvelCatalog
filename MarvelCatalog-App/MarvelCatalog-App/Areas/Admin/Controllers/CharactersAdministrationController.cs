@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Bytes2you.Validation;
+using Marvel_Catalog_App.Data.Models;
 using MarvelCatalog_App.Areas.Admin.Models;
 using MarvelCatalog_App.Services.Contracts;
 using MarvelCatalog_App.ViewModels;
@@ -50,6 +51,30 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
 
             return this.View(characterViewModel);
         }
-        
+
+        [HttpGet]
+        public ActionResult AddCharacter()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public ActionResult AddCharacterToDb(CharacterViewModel character)
+        {
+            var characterDataModel = new CharacterDataModel()
+            {
+                Name = character.Name,
+                Description = character.Description,
+                Image = character.Image,
+                isDeleted = false,
+                CreatedOn = DateTime.Now
+            };
+
+            this.service.AddCharacter(characterDataModel);
+
+            return RedirectToAction("AddCharacter");
+        }
+
+
     }
 }

@@ -264,6 +264,7 @@
     <Content Include="Areas\Admin\Views\Shared\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CharactersAdministration\GetAllCharacters.cshtml" />
     <Content Include="Areas\Admin\Views\CharactersAdministration\GetCharacterById.cshtml" />
+    <Content Include="Areas\Admin\Views\CharactersAdministration\AddCharacter.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

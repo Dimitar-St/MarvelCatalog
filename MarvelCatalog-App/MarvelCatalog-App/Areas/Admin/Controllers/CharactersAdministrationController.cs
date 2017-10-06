@@ -75,6 +75,21 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             return RedirectToAction("AddCharacter");
         }
 
+        [HttpGet]
+        public ActionResult RemoveCharacter()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public ActionResult RemoveCharacterFromDb(CharacterViewModel character)
+        {
+            var characterDataModel = new CharacterDataModel() { Name = character.Name };
+
+            this.service.RemoveCharacter(characterDataModel);
+
+            return RedirectToAction("RemoveCharacter");
+        }
 
     }
 }

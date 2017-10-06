@@ -64,5 +64,16 @@ namespace MarvelCatalog_App.Services
             this.unitOfwork.SaveChanges();
         }
 
+        public void RemoveCharacter(CharacterDataModel character)
+        {
+            Guard.WhenArgument(character, nameof(character)).IsNull().Throw();
+
+            var characterToRemove = this.characters.All.First(c => c.isDeleted != true && c.Name == character.Name);
+
+            characterToRemove.isDeleted = true;
+
+            this.unitOfwork.SaveChanges();
+        }
+
     }
 }

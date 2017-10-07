@@ -109,6 +109,8 @@
     <Compile Include="Controllers\ComicsControllerTests\Constructor_Should.cs" />
     <Compile Include="Controllers\ComicsControllerTests\GivenComicsPage_Should.cs" />
     <Compile Include="Controllers\ComicsControllerTests\MainComicsPage_Should.cs" />
+    <Compile Include="Controllers\CreatorsControllerTests\Constructor_Should.cs" />
+    <Compile Include="Controllers\CreatorsControllerTests\MainCreatorsPage_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\CharacterServiceTests\AddCharacter_Should.cs" />

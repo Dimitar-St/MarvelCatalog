@@ -119,6 +119,8 @@
     <Compile Include="Services\CharacterServiceTests\GetCharacter_Should.cs" />
     <Compile Include="Services\ComicsServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\ComicsServiceTests\GetComics_Should.cs" />
+    <Compile Include="Services\CreatorsServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\CreatorsServiceTests\GetCreators_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

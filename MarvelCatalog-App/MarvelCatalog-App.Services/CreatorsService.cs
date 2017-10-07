@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Marvel_Catalog_App.Data.Models;
 using MarvelCatalog_App.Data.Repositories;
+using Bytes2you.Validation;
 
 namespace MarvelCatalog_App.Services
 {
@@ -16,6 +17,9 @@ namespace MarvelCatalog_App.Services
 
         public CreatorsService(IUnitOfWork unitOfWork, IEfRepository<CreatorsDataModel> creatorsRepository)
         {
+            Guard.WhenArgument(unitOfWork, nameof(unitOfWork)).IsNull().Throw();
+            Guard.WhenArgument(creatorsRepository, nameof(creatorsRepository)).IsNull().Throw();
+
             this.unitOfWork = unitOfWork;
             this.creatorsRepository = creatorsRepository;
         }

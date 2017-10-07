@@ -20,16 +20,16 @@ namespace Marvel_Catalog_App.Data.Models
             this.Image = image;
         }
 
-        public int Age { get; private set; }
+        public int Age { get; set; }
 
-        public string Career { get; private set; }
+        public string Career { get; set; }
 
         public Dictionary<string, string> Comments { get; private set; }
 
-        public string Description { get; private set; }
+        public string Description { get; set; }
 
-        public string FullName { get; private set; }
+        public string FullName { get; set; }
 
-        public string Image { get; private set; }
+        public string Image { get; set; }
     }
 }

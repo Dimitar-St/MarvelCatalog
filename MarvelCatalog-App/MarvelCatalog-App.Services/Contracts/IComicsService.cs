@@ -12,5 +12,7 @@ namespace MarvelCatalog_App.Services.Contracts
         IEnumerable<ComicsDataModel> GetComics();
 
         ComicsDataModel GetComic(string title);
+
+        void AddComic(ComicsDataModel comics);
     }
 }

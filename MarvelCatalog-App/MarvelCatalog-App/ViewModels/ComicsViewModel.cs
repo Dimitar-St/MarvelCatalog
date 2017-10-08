@@ -8,6 +8,8 @@ namespace MarvelCatalog_App.ViewModels
 {
     public class ComicsViewModel
     {
+        public ComicsViewModel() { }
+
         public ComicsViewModel(string title, string image, string description, double price, IEnumerable<CharacterDataModel> characters, IDictionary<string, string> comments)
         {
             this.Title = title;

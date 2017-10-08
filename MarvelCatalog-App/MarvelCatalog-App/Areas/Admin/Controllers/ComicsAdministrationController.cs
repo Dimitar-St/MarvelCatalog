@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Bytes2you.Validation;
+using Marvel_Catalog_App.Data.Models;
 using MarvelCatalog_App.Areas.Admin.Models;
 using MarvelCatalog_App.Services.Contracts;
 using MarvelCatalog_App.ViewModels;
@@ -44,6 +45,30 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             var comicsViewModel = this.mapper.Map<ComicsAdminViewModel>(comicData);
 
             return this.View(comicsViewModel);
+        }
+
+        [HttpGet]
+        public ActionResult AddComics()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public ActionResult AddComicsToDb(ComicsViewModel comics)
+        {
+            var comicsData = new ComicsDataModel()
+            {
+                Title = comics.Title,
+                Price = comics.Price,
+                Image = comics.Image,
+                isDeleted = false,
+                CreatedOn = DateTime.Now,
+                Description = comics.Description
+            };
+
+            this.service.AddComic(comicsData);
+
+            return RedirectToAction("AddComics");
         }
 
     }

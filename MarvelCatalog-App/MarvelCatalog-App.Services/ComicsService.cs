@@ -35,9 +35,20 @@ namespace MarvelCatalog_App.Services
 
         public ComicsDataModel GetComic(string title)
         {
+            Guard.WhenArgument(title, nameof(title)).IsNull().Throw();
+
             var searchedComic = this.comics.All.FirstOrDefault(c => c.Title == title);
 
             return searchedComic;
+        }
+
+        public void AddComic(ComicsDataModel comics)
+        {
+            Guard.WhenArgument(comics, nameof(comics)).IsNull().Throw();
+
+            this.comics.Add(comics);
+
+            this.unitOfWork.SaveChanges();
         }
     }
 }

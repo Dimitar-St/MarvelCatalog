@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Bytes2you.Validation;
 using Marvel_Catalog_App.Data.Models;
+using Marvel_Catalog_App.Data.Models.Contracts;
 using MarvelCatalog_App.Areas.Admin.Models;
 using MarvelCatalog_App.Services.Contracts;
 using MarvelCatalog_App.ViewModels;
@@ -17,14 +18,18 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
     {
         private readonly IMapper mapper;
         private readonly IComicsService service;
+        private readonly IDataModelsFactory factory;
 
-        public ComicsAdministrationController(IComicsService service, IMapper mapper)
+        public ComicsAdministrationController(IComicsService service, IMapper mapper,
+                                              IDataModelsFactory factory)
         {
             Guard.WhenArgument(service, nameof(service)).IsNull().Throw();
             Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
+            Guard.WhenArgument(factory, nameof(factory)).IsNull().Throw();
 
             this.service = service;
             this.mapper = mapper;
+            this.factory = factory;
         }
 
         [HttpGet]
@@ -56,20 +61,19 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult AddComicsToDb(ComicsViewModel comics)
         {
-            var comicsData = new ComicsDataModel()
-            {
-                Title = comics.Title,
-                Price = comics.Price,
-                Image = comics.Image,
-                isDeleted = false,
-                CreatedOn = DateTime.Now,
-                Description = comics.Description
-            };
+            var comicsData = this.factory.CreateComics();
+
+            comicsData.Title = comics.Title;
+            comicsData.Price = comics.Price;
+            comicsData.Image = comics.Image;
+            comicsData.isDeleted = false;
+            comicsData.CreatedOn = DateTime.Now;
+            comicsData.Description = comics.Description;
 
             this.service.AddComic(comicsData);
 
             return RedirectToAction("AddComics");
-        }
-
     }
+
+}
 }

@@ -11,5 +11,9 @@ namespace Marvel_Catalog_App.Data.Models.Contracts
         CharacterDataModel CreateCharacter(string name, string image, string description, IDictionary<string, string> comments);
 
         CharacterDataModel CreateCharacter();
+
+        ComicsDataModel CreateComics(string title, string image, string description, double price, IEnumerable<CharacterDataModel> characters, IDictionary<string, string> comments);
+
+        ComicsDataModel CreateComics();
     }
 }

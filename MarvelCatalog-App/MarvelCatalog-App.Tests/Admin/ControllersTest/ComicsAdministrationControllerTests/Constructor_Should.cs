@@ -50,5 +50,17 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.ComicsAdministrationCont
             Assert.That(() => new ComicsAdministrationController(mockedService.Object, mockedMapper.Object, null),
                         Throws.ArgumentNullException.With.Message.Contains("factory"));
         }
+
+        [Test]
+        public void NotThrowArgumentNullException()
+        {
+            // Arrange
+            var mockedService = new Mock<IComicsService>();
+            var mockedMapper = new Mock<IMapper>();
+            var mockedFactory = new Mock<IDataModelsFactory>();
+
+            // Act & Assert
+            Assert.DoesNotThrow(() => new ComicsAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object)); 
+        }
     }
 }

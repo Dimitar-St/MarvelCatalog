@@ -8,6 +8,8 @@ namespace MarvelCatalog_App.Areas.Admin.Models
 {
     public class ComicsAdminViewModel
     {
+        public ComicsAdminViewModel() { }
+
         public ComicsAdminViewModel(int id, DateTime createdOn, DateTime deletedOn, bool isDeleted, DateTime modifiedOn, string title, string image, string description, double price, IEnumerable<CharacterDataModel> characters, IDictionary<string, string> comments)
         {
             this.Id = id;

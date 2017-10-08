@@ -45,6 +45,8 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult GetComicByTitle(string title)
         {
+            Guard.WhenArgument(title, nameof(title)).IsNull().Throw();
+
             var comicData = this.service.GetComic(title);
 
             var comicsViewModel = this.mapper.Map<ComicsAdminViewModel>(comicData);

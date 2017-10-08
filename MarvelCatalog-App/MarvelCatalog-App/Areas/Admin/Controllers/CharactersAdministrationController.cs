@@ -87,7 +87,9 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult RemoveCharacterFromDb(CharacterViewModel character)
         {
-            var characterDataModel = new CharacterDataModel() { Name = character.Name };
+            var characterDataModel = this.factory.CreateCharacter();
+
+            characterDataModel.Name = character.Name;
 
             this.service.RemoveCharacter(characterDataModel);
 

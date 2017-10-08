@@ -15,31 +15,8 @@ using System.Threading.Tasks;
 namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministrationControllerTests
 {
     [TestFixture]
-    public class AddCharacterToDb_Should
+    public class RemoveCharacterFromDb_Should
     {
-        [Test]
-        public void Call_AddCharacterToDbMethod_FromTheService()
-        {
-            // Arrange
-            var characterDataModel = new CharacterDataModel();
-            var characterViewModel = new CharacterViewModel();
-
-            var mockedService = new Mock<ICharacterService>();
-            var mockedMapper = new Mock<IMapper>();
-            var mockedFactory = new Mock<IDataModelsFactory>();
-
-            mockedFactory.Setup(fac => fac.CreateCharacter()).Returns(characterDataModel);
-            mockedService.Setup(service => service.AddCharacter(characterDataModel));
-
-            var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
-
-            // Act
-            characterAdminController.AddCharacterToDb(characterViewModel);
-
-            // Assert
-            mockedService.Verify(service => service.AddCharacter(characterDataModel), Times.Once);
-        }
-
         [Test]
         public void Call_CreateCharacterMethod_FromTheFactory()
         {
@@ -52,15 +29,38 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
             var mockedFactory = new Mock<IDataModelsFactory>();
 
             mockedFactory.Setup(fac => fac.CreateCharacter()).Returns(characterDataModel);
-            mockedService.Setup(service => service.AddCharacter(characterDataModel));
+            mockedService.Setup(service => service.RemoveCharacter(characterDataModel));
 
             var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
 
             // Act
-            characterAdminController.AddCharacterToDb(characterViewModel);
+            characterAdminController.RemoveCharacterFromDb(characterViewModel);
 
             // Assert
             mockedFactory.Verify(fac => fac.CreateCharacter(), Times.Once);
+        }
+
+        [Test]
+        public void Call_RemoveCharcterMethod_FromTheService()
+        {
+            // Arrange
+            var characterDataModel = new CharacterDataModel();
+            var characterViewModel = new CharacterViewModel();
+
+            var mockedService = new Mock<ICharacterService>();
+            var mockedMapper = new Mock<IMapper>();
+            var mockedFactory = new Mock<IDataModelsFactory>();
+
+            mockedFactory.Setup(fac => fac.CreateCharacter()).Returns(characterDataModel);
+            mockedService.Setup(service => service.RemoveCharacter(characterDataModel));
+
+            var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
+
+            // Act
+            characterAdminController.RemoveCharacterFromDb(characterViewModel);
+
+            // Assert
+            mockedService.Verify(service => service.RemoveCharacter(characterDataModel), Times.Once);
         }
     }
 }

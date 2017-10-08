@@ -103,6 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\Constructor_Should.cs" />
+    <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\GetAllCharacters_Should.cs" />
+    <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\GetCharacterById_Should.cs" />
     <Compile Include="Controllers\CharactersControllerTests\Constructor_Should.cs" />
     <Compile Include="Controllers\CharactersControllerTests\GivenCharacterPage_Should.cs" />
     <Compile Include="Controllers\CharactersControllerTests\MainCharactersPage_Should.cs" />

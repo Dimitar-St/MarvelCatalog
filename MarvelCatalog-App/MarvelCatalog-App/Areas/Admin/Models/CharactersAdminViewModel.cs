@@ -7,6 +7,8 @@ namespace MarvelCatalog_App.Areas.Admin.Models
 {
     public class CharactersAdminViewModel
     {
+        public CharactersAdminViewModel() { }
+
         public CharactersAdminViewModel(int id, DateTime createdOn, DateTime deletedOn, bool isDeleted, DateTime modifiedOn, string name, string image, string description)
         {
             this.Id = id;

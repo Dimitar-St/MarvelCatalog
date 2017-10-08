@@ -31,7 +31,7 @@
                 <td>@c.Description</td>
                 <td>@c.Price</td>
                 <td>
-                    @Html.ActionLink("Edit", "GetCharacterById", "CharactersAdministration", new { id = c.Id }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Edit", "GetComicByTitle", "ComicsAdministration", new { title = c.Title }, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }

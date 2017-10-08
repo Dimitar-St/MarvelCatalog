@@ -269,6 +269,7 @@
     <Content Include="Areas\Admin\Views\CharactersAdministration\AddCharacter.cshtml" />
     <Content Include="Areas\Admin\Views\CharactersAdministration\RemoveCharacter.cshtml" />
     <Content Include="Areas\Admin\Views\ComicsAdministration\GetAllComics.cshtml" />
+    <Content Include="Areas\Admin\Views\ComicsAdministration\GetComicByTitle.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

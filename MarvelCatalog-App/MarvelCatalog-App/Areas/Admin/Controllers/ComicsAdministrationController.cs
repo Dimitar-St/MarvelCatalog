@@ -36,5 +36,15 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             return this.View(comicsViewModel);
         }
 
+        [HttpGet]
+        public ActionResult GetComicByTitle(string title)
+        {
+            var comicData = this.service.GetComic(title);
+
+            var comicsViewModel = this.mapper.Map<ComicsAdminViewModel>(comicData);
+
+            return this.View(comicsViewModel);
+        }
+
     }
 }

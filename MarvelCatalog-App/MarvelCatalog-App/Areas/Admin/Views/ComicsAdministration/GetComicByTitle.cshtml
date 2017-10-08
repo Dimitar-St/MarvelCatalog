@@ -1,0 +1,40 @@
+﻿@model MarvelCatalog_App.Areas.Admin.Models.ComicsAdminViewModel
+@{
+    ViewBag.Title = "GetComicByTitle";
+}
+
+<div class="container" *ngFor="let crimeMovie of crimeMovies">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6">
+                @using (Html.BeginForm("AddUser", "CharactersAdministration", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Title, "Title")
+                        @Html.TextBoxFor(m => m.Title, new { id = "Name", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Title)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Description, "Description")
+                        @Html.TextAreaFor(m => m.Description, new { id = "Description", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.isDeleted, "isDeleted")
+                        @Html.TextBoxFor(m => m.isDeleted, new { id = "isDeleted", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Image, "Image")
+                        @Html.TextBoxFor(m => m.Image, new { id = "Image", @class = "form-control" })
+                    </div>
+                    <br />
+                    <div class="text-center">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-info form-control">Save Changes</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

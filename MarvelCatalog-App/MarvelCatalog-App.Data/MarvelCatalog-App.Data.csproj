@@ -62,22 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IEfMarvelCatalogDbContext.cs" />
-    <Compile Include="Migrations\201710051209306_I added new user fields.cs" />
-    <Compile Include="Migrations\201710051209306_I added new user fields.Designer.cs">
-      <DependentUpon>201710051209306_I added new user fields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710071822249_added new user fields.cs" />
-    <Compile Include="Migrations\201710071822249_added new user fields.Designer.cs">
-      <DependentUpon>201710071822249_added new user fields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710072040367_added new user fieldsasd.cs" />
-    <Compile Include="Migrations\201710072040367_added new user fieldsasd.Designer.cs">
-      <DependentUpon>201710072040367_added new user fieldsasd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710072050028_added new user fieldsasdfdfd.cs" />
-    <Compile Include="Migrations\201710072050028_added new user fieldsasdfdfd.Designer.cs">
-      <DependentUpon>201710072050028_added new user fieldsasdfdfd.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="EfMarvelCatalogDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,20 +79,6 @@
       <Project>{B8537839-CA0C-4E51-918C-2842DE6262CF}</Project>
       <Name>Marvel-Catalog-App.Data.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710051209306_I added new user fields.resx">
-      <DependentUpon>201710051209306_I added new user fields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710071822249_added new user fields.resx">
-      <DependentUpon>201710071822249_added new user fields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710072040367_added new user fieldsasd.resx">
-      <DependentUpon>201710072040367_added new user fieldsasd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710072050028_added new user fieldsasdfdfd.resx">
-      <DependentUpon>201710072050028_added new user fieldsasdfdfd.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

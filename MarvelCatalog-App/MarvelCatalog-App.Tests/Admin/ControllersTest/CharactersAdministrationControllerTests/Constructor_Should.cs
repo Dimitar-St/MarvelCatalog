@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Marvel_Catalog_App.Data.Models.Contracts;
 using MarvelCatalog_App.Areas.Admin.Controllers;
 using MarvelCatalog_App.Services.Contracts;
 using Moq;
@@ -19,8 +20,9 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
         {
             var mockedService = new Mock<ICharacterService>();
             var mockedMapper = new Mock<IMapper>();
+            var mockedFactory = new Mock<IDataModelsFactory>();
 
-            var characterAdministrationController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object);
+            var characterAdministrationController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
 
             Assert.IsInstanceOf<CharactersAdministrationController>(characterAdministrationController);
         }
@@ -30,8 +32,9 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
         {
             ICharacterService invalidService = null;
             var mockedMapper = new Mock<IMapper>();
+            var mockedFactory = new Mock<IDataModelsFactory>();
 
-            Assert.That(() => new CharactersAdministrationController(invalidService, mockedMapper.Object),
+            Assert.That(() => new CharactersAdministrationController(invalidService, mockedMapper.Object, mockedFactory.Object),
                 Throws.ArgumentNullException.With.Message.Contains("service"));
 
         }
@@ -41,8 +44,9 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
         {
             var mockedService = new Mock<ICharacterService>();
             IMapper invalidMapper = null;
+            var mockedFactory = new Mock<IDataModelsFactory>();
 
-            Assert.That(() => new CharactersAdministrationController(mockedService.Object, invalidMapper),
+            Assert.That(() => new CharactersAdministrationController(mockedService.Object, invalidMapper, mockedFactory.Object),
                 Throws.ArgumentNullException.With.Message.Contains("mapper"));
         }
     }

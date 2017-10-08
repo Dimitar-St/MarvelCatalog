@@ -68,9 +68,11 @@
     <Compile Include="CharacterDataModel.cs" />
     <Compile Include="ComicsDataModel.cs" />
     <Compile Include="Contracts\IAuditable.cs" />
+    <Compile Include="Contracts\IDataModelsFactory.cs" />
     <Compile Include="Contracts\IDeletable.cs" />
     <Compile Include="Abstracts\DataModel.cs" />
     <Compile Include="CreatorsDataModel.cs" />
+    <Compile Include="Factories\DataModelsFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>

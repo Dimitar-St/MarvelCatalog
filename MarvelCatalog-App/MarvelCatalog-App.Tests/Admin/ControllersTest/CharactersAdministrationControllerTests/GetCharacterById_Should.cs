@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Marvel_Catalog_App.Data.Models;
+using Marvel_Catalog_App.Data.Models.Contracts;
 using MarvelCatalog_App.Areas.Admin.Controllers;
 using MarvelCatalog_App.Areas.Admin.Models;
 using MarvelCatalog_App.Services.Contracts;
@@ -25,13 +26,14 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
 
             var mockedService = new Mock<ICharacterService>();
             var mockedMapper = new Mock<IMapper>();
+            var mockedFactory = new Mock<IDataModelsFactory>();
 
             mockedService.Setup(service => service.GetCharacterById(1))
                          .Returns(characterDataModel);
             mockedMapper.Setup(mapper => mapper.Map<CharactersAdminViewModel>(characterVeiwModel))
                         .Returns(characterVeiwModel);
 
-            var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object);
+            var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
 
             // Act
             characterAdminController.GetCharacterById(1);
@@ -50,13 +52,14 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
 
             var mockedService = new Mock<ICharacterService>();
             var mockedMapper = new Mock<IMapper>();
+            var mockedFactory = new Mock<IDataModelsFactory>();
 
             mockedService.Setup(service => service.GetCharacterById(1))
                          .Returns(characterDataModel);
             mockedMapper.Setup(mapper => mapper.Map<CharactersAdminViewModel>(characterVeiwModel))
                         .Returns(characterVeiwModel);
 
-            var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object);
+            var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
 
             // Act
             characterAdminController.GetCharacterById(1);

@@ -20,6 +20,8 @@ namespace MarvelCatalog_App.App_Start
     using Marvel_Catalog_App.Data.Models;
     using Data.UnitOfWork;
     using Areas.Admin.Models;
+    using Marvel_Catalog_App.Data.Models.Contracts;
+    using Marvel_Catalog_App.Data.Models.Factories;
 
     public static class NinjectWebCommon
     {
@@ -77,6 +79,7 @@ namespace MarvelCatalog_App.App_Start
             kernel.Bind<IComicsService>().To<ComicsService>();
             kernel.Bind<ICreatorsService>().To<CreatorsService>();
             kernel.Bind<IUnitOfWork>().To<UnitOfwork>();
+            kernel.Bind<IDataModelsFactory>().To<DataModelsFactory>();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
         }
 

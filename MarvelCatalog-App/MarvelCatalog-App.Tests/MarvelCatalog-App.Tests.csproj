@@ -102,6 +102,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\AddCharacterToDb_Should.cs" />
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\Constructor_Should.cs" />
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\GetAllCharacters_Should.cs" />
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\GetCharacterById_Should.cs" />

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Bytes2you.Validation;
 using Marvel_Catalog_App.Data.Models;
+using Marvel_Catalog_App.Data.Models.Contracts;
 using MarvelCatalog_App.Areas.Admin.Models;
 using MarvelCatalog_App.Services.Contracts;
 using MarvelCatalog_App.ViewModels;
@@ -17,14 +18,17 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
     {
         private readonly ICharacterService service;
         private readonly IMapper mapper;
+        private readonly IDataModelsFactory factory;
 
-        public CharactersAdministrationController(ICharacterService service, IMapper mapper)
+        public CharactersAdministrationController(ICharacterService service, IMapper mapper,
+                                                  IDataModelsFactory factory)
         {
             Guard.WhenArgument(service, nameof(service)).IsNull().Throw();
             Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
 
             this.service = service;
             this.mapper = mapper;
+            this.factory = factory;
         }
 
         public ActionResult Index()
@@ -61,14 +65,13 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult AddCharacterToDb(CharacterViewModel character)
         {
-            var characterDataModel = new CharacterDataModel()
-            {
-                Name = character.Name,
-                Description = character.Description,
-                Image = character.Image,
-                isDeleted = false,
-                CreatedOn = DateTime.Now
-            };
+            var characterDataModel = this.factory.CreateCharacter();
+
+            characterDataModel.Name = character.Name;
+            characterDataModel.Description = character.Description;
+            characterDataModel.Image = character.Image;
+            characterDataModel.isDeleted = false;
+            characterDataModel.CreatedOn = DateTime.Now;
 
             this.service.AddCharacter(characterDataModel);
 

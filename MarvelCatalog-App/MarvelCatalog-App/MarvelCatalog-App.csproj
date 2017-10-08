@@ -220,7 +220,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CharactersAdministrationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ComicsAdministrationController.cs" />
     <Compile Include="Areas\Admin\Models\CharactersAdminViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ComicsAdminViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CharactersController.cs" />
     <Compile Include="Controllers\ComicsController.cs" />
@@ -266,6 +268,7 @@
     <Content Include="Areas\Admin\Views\CharactersAdministration\GetCharacterById.cshtml" />
     <Content Include="Areas\Admin\Views\CharactersAdministration\AddCharacter.cshtml" />
     <Content Include="Areas\Admin\Views\CharactersAdministration\RemoveCharacter.cshtml" />
+    <Content Include="Areas\Admin\Views\ComicsAdministration\GetAllComics.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

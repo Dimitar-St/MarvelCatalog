@@ -89,6 +89,7 @@ namespace MarvelCatalog_App.App_Start
                                 c.CreateMap<ComicsDataModel, ComicsViewModel>();
                                 c.CreateMap<CreatorsDataModel, CreatorViewModel>();
                                 c.CreateMap<CharacterDataModel, CharactersAdminViewModel>();
+                                c.CreateMap<ComicsDataModel, ComicsAdminViewModel>();
                             });
 
             var mapper = config.CreateMapper();

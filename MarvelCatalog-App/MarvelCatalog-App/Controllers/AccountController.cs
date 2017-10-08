@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MarvelCatalog_App.Models;
 using Marvel_Catalog_App.Data.Models;
+using System.Collections.Generic;
 
 namespace MarvelCatalog_App.Controllers
 {
@@ -152,7 +153,11 @@ namespace MarvelCatalog_App.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new User { UserName = model.Email, Email = model.Email,
+                        FavoritesCharacters = new List<CharacterDataModel>(),
+                        FavoritesComics = new List<ComicsDataModel>()
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

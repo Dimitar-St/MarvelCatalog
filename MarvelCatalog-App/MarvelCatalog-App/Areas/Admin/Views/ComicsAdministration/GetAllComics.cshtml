@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MarvelCatalog_App.Areas.Admin.Models.ComicsAdminViewModel>
+@{
+    ViewBag.Title = "GetAllComics";
+}
+
+<table class="table table-bordered table-striped table-responsive" style="margin-right: 400px;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>CreatedOn</th>
+            <th>DeletedOn</th>
+            <th>isDeleted</th>
+            <th>ModifiedOn</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.CreatedOn</td>
+                <td>@c.DeletedOn</td>
+                <td>@c.isDeleted</td>
+                <td>@c.ModifiedOn</td>
+                <td>@c.Title</td>
+                <td>@c.Image</td>
+                <td>@c.Description</td>
+                <td>@c.Price</td>
+                <td>
+                    @Html.ActionLink("Edit", "GetCharacterById", "CharactersAdministration", new { id = c.Id }, new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

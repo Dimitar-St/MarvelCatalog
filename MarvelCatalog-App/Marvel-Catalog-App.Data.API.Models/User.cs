@@ -32,14 +32,17 @@ namespace Marvel_Catalog_App.Data.Models
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
 
+        [Display(Name = "FavoritesCharacters"), Required]
         public ICollection<CharacterDataModel> FavoritesCharacters { get; set; }
 
+        [Display(Name = "FavoritesComics"), Required]
         public ICollection<ComicsDataModel> FavoritesComics { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            
             // Add custom user claims here
             return userIdentity;
         }

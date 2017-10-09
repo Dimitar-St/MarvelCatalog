@@ -27,6 +27,7 @@ namespace MarvelCatalog_App.Controllers
         }
         
         [HttpGet]
+        [OutputCache(Duration = 60, VaryByParam = "none")]
         public ActionResult MainCharactersPage()
         {
             var charactersData = this.service.GetCharacters();
@@ -37,6 +38,7 @@ namespace MarvelCatalog_App.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Duration = 60, VaryByParam = "none")]
         public ActionResult GivenCharacterPage(string name)
         {
             var characterData = this.service.GetCharacter(name);

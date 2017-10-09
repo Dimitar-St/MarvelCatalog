@@ -79,5 +79,21 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             return RedirectToAction("AddComics");
         }
 
+        [HttpGet]
+        public ActionResult RemoveComics()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public ActionResult RemoveComicsFromDb(ComicsViewModel comics)
+        {
+            Guard.WhenArgument(comics, nameof(comics)).IsNull().Throw();
+
+            this.service.RemoveComic(comics.Title);
+
+            return RedirectToAction("RemoveComics");
+        }
+
     }
 }

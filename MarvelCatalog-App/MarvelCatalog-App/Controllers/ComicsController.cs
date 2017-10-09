@@ -25,6 +25,7 @@ namespace MarvelCatalog_App.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Duration = 60, VaryByParam = "none")]
         public ActionResult MainComicsPage()
         {
             var comics = this.comicsService.GetComics();
@@ -35,6 +36,7 @@ namespace MarvelCatalog_App.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Duration = 60, VaryByParam = "none")]
         public ActionResult GivenComicsPage(string name)
         {
             var comic = this.comicsService.GetComic(name);

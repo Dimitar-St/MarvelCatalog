@@ -1,0 +1,28 @@
+﻿@model MarvelCatalog_App.Areas.Admin.Models.ComicsAdminViewModel
+@{
+    ViewBag.Title = "RemoveComicsFromDb";
+}
+
+<div class="container" *ngFor="let crimeMovie of crimeMovies">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6">
+                @using (Html.BeginForm("RemoveComicsFromDb", "ComicsAdministration", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Title)
+                        @Html.TextBoxFor(m => m.Title, new { id = "Title", @class = "form-control" })
+                    </div>
+                    <br />
+                    <div class="text-center">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-info form-control">Remove Character</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

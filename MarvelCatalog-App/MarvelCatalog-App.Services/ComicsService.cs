@@ -50,5 +50,16 @@ namespace MarvelCatalog_App.Services
 
             this.unitOfWork.SaveChanges();
         }
+
+        public void RemoveComic(string title)
+        {
+            Guard.WhenArgument(title, nameof(title)).IsNull().Throw();
+
+            var comics = this.comics.All.FirstOrDefault(comic => comic.Title == title && comic.isDeleted == false);
+
+            comics.isDeleted = true;
+
+            this.unitOfWork.SaveChanges();
+        }
     }
 }

@@ -63,6 +63,8 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult AddComicsToDb(ComicsViewModel comics)
         {
+            Guard.WhenArgument(comics, nameof(comics)).IsNull().Throw();
+
             var comicsData = this.factory.CreateComics();
 
             comicsData.Title = comics.Title;
@@ -75,7 +77,7 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             this.service.AddComic(comicsData);
 
             return RedirectToAction("AddComics");
-    }
+        }
 
-}
+    }
 }

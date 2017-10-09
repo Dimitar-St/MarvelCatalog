@@ -107,6 +107,7 @@
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\GetAllCharacters_Should.cs" />
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\GetCharacterById_Should.cs" />
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\RemoveCharacterFromDb_Should.cs" />
+    <Compile Include="Admin\ControllersTest\ComicsAdministrationControllerTests\AddComicsToDb_Should.cs" />
     <Compile Include="Admin\ControllersTest\ComicsAdministrationControllerTests\Constructor_Should.cs" />
     <Compile Include="Admin\ControllersTest\ComicsAdministrationControllerTests\GetAllComics_Should.cs" />
     <Compile Include="Admin\ControllersTest\ComicsAdministrationControllerTests\GetComicByTitle_Should.cs" />

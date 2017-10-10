@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Collections;
+using Bytes2you.Validation;
 
 namespace MarvelCatalog_App.Data.Repositories
 {
@@ -19,6 +20,8 @@ namespace MarvelCatalog_App.Data.Repositories
 
         public EfRepository(IEfMarvelCatalogDbContext dbContext)
         {
+            Guard.WhenArgument(dbContext, nameof(dbContext)).IsNull().Throw();
+
             this.dbSet = dbContext.GetSet<T>();
             this.dbContext = dbContext;
         }

@@ -62,26 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IEfMarvelCatalogDbContext.cs" />
-    <Compile Include="Migrations\201710092209025_I added CommentDataModel.cs" />
-    <Compile Include="Migrations\201710092209025_I added CommentDataModel.Designer.cs">
-      <DependentUpon>201710092209025_I added CommentDataModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710092332342_I added CommentDatl.cs" />
-    <Compile Include="Migrations\201710092332342_I added CommentDatl.Designer.cs">
-      <DependentUpon>201710092332342_I added CommentDatl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710100109063_I added new field to CharacterDataModel.cs" />
-    <Compile Include="Migrations\201710100109063_I added new field to CharacterDataModel.Designer.cs">
-      <DependentUpon>201710100109063_I added new field to CharacterDataModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710100127001_asdfsdfsdf.cs" />
-    <Compile Include="Migrations\201710100127001_asdfsdfsdf.Designer.cs">
-      <DependentUpon>201710100127001_asdfsdfsdf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710100202408_asdfsdfsdadasdf.cs" />
-    <Compile Include="Migrations\201710100202408_asdfsdfsdadasdf.Designer.cs">
-      <DependentUpon>201710100202408_asdfsdfsdadasdf.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="EfMarvelCatalogDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,23 +79,6 @@
       <Project>{B8537839-CA0C-4E51-918C-2842DE6262CF}</Project>
       <Name>Marvel-Catalog-App.Data.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710092209025_I added CommentDataModel.resx">
-      <DependentUpon>201710092209025_I added CommentDataModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710092332342_I added CommentDatl.resx">
-      <DependentUpon>201710092332342_I added CommentDatl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710100109063_I added new field to CharacterDataModel.resx">
-      <DependentUpon>201710100109063_I added new field to CharacterDataModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710100127001_asdfsdfsdf.resx">
-      <DependentUpon>201710100127001_asdfsdfsdf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710100202408_asdfsdfsdadasdf.resx">
-      <DependentUpon>201710100202408_asdfsdfsdadasdf.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

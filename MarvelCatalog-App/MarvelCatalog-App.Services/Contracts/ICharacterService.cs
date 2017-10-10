@@ -19,6 +19,6 @@ namespace MarvelCatalog_App.Services.Contracts
 
         void AddCharacter(CharacterDataModel character);
 
-        void RemoveCharacter(CharacterDataModel character);
+        void RemoveCharacter(CharacterDataModel character);       
     }
 }

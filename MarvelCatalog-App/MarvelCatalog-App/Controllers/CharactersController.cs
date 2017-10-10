@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Bytes2you.Validation;
+using Marvel_Catalog_App.Data.Models;
 using MarvelCatalog_App.Models;
 using MarvelCatalog_App.Services;
 using MarvelCatalog_App.Services.Contracts;
@@ -9,20 +10,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace MarvelCatalog_App.Controllers
 {
     public class CharactersController : Controller
     {
-        private readonly ICharacterService service;
-        private IMapper mapper;
+        private readonly ICharacterService characterService;
+        private readonly IMapper mapper;
 
-        public CharactersController(ICharacterService service, IMapper mapper)
+        public CharactersController(ICharacterService characterService, IMapper mapper)
         {
-            Guard.WhenArgument(service, nameof(service)).IsNull().Throw();
+            Guard.WhenArgument(characterService, nameof(characterService)).IsNull().Throw();
             Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
 
-            this.service = service;
+            this.characterService = characterService;
             this.mapper = mapper;
         }
         
@@ -30,7 +32,7 @@ namespace MarvelCatalog_App.Controllers
         [OutputCache(Duration = 60, VaryByParam = "none")]
         public ActionResult MainCharactersPage()
         {
-            var charactersData = this.service.GetCharacters();
+            var charactersData = this.characterService.GetCharacters();
 
             IEnumerable<CharacterViewModel> characters = this.mapper.Map<IEnumerable<CharacterViewModel>>(charactersData);
 
@@ -41,18 +43,19 @@ namespace MarvelCatalog_App.Controllers
         [OutputCache(Duration = 60, VaryByParam = "none")]
         public ActionResult GivenCharacterPage(string name)
         {
-            var characterData = this.service.GetCharacter(name);
+            var characterData = this.characterService.GetCharacter(name);
 
             CharacterViewModel characterViewModel = this.mapper.Map<CharacterViewModel>(characterData);
 
             return this.View(characterViewModel);
         }
 
-        public void AddToFavorites(int characterId)
-        {
-            var character = this.service.GetCharacterById(characterId);
-
-
-        }
+        //public void AddToFavorites(string name)
+        //{
+        //    var character = this.characterService.GetCharacter(name);
+        //    var user = this.User.Identity;
+        //
+        //    this.userService.AddToFavoritesCharacters(user, character);
+        //}
     }
 }

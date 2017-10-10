@@ -23,7 +23,7 @@ namespace MarvelCatalog_App.Data
         public IDbSet<ComicsDataModel> Comics { get; set; }
 
         public IDbSet<CreatorsDataModel> Creators { get; set; }
-
+        
         public static EfMarvelCatalogDbContext Create()
         {
             return new EfMarvelCatalogDbContext();

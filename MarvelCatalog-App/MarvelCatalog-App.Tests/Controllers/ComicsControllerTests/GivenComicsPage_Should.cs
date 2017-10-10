@@ -23,7 +23,7 @@ namespace MarvelCatalog_App.Tests.Controllers.ComicsControllerTests
             var comicName = "some name";
 
             var comicsDataModel = new ComicsDataModel();
-            var comicsViewModel = new ComicsViewModel("", "", "", 1, new List<CharacterDataModel>(), new Dictionary<string, string>());
+            var comicsViewModel = new ComicsViewModel("", "", "", 1, new List<CharacterDataModel>());
 
             var mockedService = new Mock<IComicsService>();
             var mockedMapper = new Mock<IMapper>();
@@ -46,8 +46,8 @@ namespace MarvelCatalog_App.Tests.Controllers.ComicsControllerTests
             // Arrange
             var comicName = "some name";
 
-            var comicsDataModel = new ComicsDataModel("asdasd", "asdasd", "asdad", 1, new List<CharacterDataModel>(), new Dictionary<string, string>());
-            var comicsViewModel = new ComicsViewModel("asdasd", "asdasd", "asdad", 1, new List<CharacterDataModel>(), new Dictionary<string, string>());
+            var comicsDataModel = new ComicsDataModel("asdasd", "asdasd", "asdad", 1, new List<CharacterDataModel>());
+            var comicsViewModel = new ComicsViewModel("asdasd", "asdasd", "asdad", 1, new List<CharacterDataModel>());
 
             var mockedService = new Mock<IComicsService>();
             var mockedMapper = new Mock<IMapper>();

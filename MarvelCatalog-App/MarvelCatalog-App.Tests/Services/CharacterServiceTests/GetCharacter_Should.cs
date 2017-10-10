@@ -37,8 +37,8 @@ namespace MarvelCatalog_App.Tests.Services.CharacterServiceTests
 
             var charatcersDataModel = new List<CharacterDataModel>()
             {
-                new CharacterDataModel(expectedName, "", "", new Dictionary<string, string>()),
-                new CharacterDataModel("differentName", "", "", new Dictionary<string, string>())
+                new CharacterDataModel(expectedName, "", ""),
+                new CharacterDataModel("differentName", "", "")
             };
 
             var mockedUnitOfwork = new Mock<IUnitOfWork>();

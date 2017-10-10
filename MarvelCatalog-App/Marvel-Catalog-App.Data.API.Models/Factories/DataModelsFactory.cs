@@ -11,9 +11,9 @@ namespace Marvel_Catalog_App.Data.Models.Factories
     {
         public DataModelsFactory() { }
 
-        public CharacterDataModel CreateCharacter(string name, string image, string description, IDictionary<string, string> comments)
+        public CharacterDataModel CreateCharacter(string name, string image, string description)
         {
-            return new CharacterDataModel(name, image, description, comments);
+            return new CharacterDataModel(name, image, description);
         }
 
         public CharacterDataModel CreateCharacter()
@@ -21,9 +21,9 @@ namespace Marvel_Catalog_App.Data.Models.Factories
             return new CharacterDataModel();
         }
 
-        public ComicsDataModel CreateComics(string title, string image, string description, double price, IEnumerable<CharacterDataModel> characters, IDictionary<string, string> comments)
+        public ComicsDataModel CreateComics(string title, string image, string description, double price, IEnumerable<CharacterDataModel> characters)
         {
-            return new ComicsDataModel(title, image, description, price, characters, comments);
+            return new ComicsDataModel(title, image, description, price, characters);
         }
 
         public ComicsDataModel CreateComics()

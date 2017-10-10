@@ -23,7 +23,7 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
 
             // Act & Assert
             Assert.That(() => new CharactersController(null, mockedMapper.Object),
-                            Throws.ArgumentNullException.With.Message.Contains("service"));
+                            Throws.ArgumentNullException.With.Message.Contains("characterService"));
         }
 
         [Test]

@@ -106,6 +106,7 @@
   <ItemGroup>
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\AddCharacterToDb_Should.cs" />
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\Constructor_Should.cs" />
+    <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\EditCharacter_Should.cs" />
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\GetAllCharacters_Should.cs" />
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\GetCharacterById_Should.cs" />
     <Compile Include="Admin\ControllersTest\CharactersAdministrationControllerTests\RemoveCharacterFromDb_Should.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\CharacterServiceTests\AddCharacter_Should.cs" />
     <Compile Include="Services\CharacterServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\CharacterServiceTests\EditCharacter_Should.cs" />
     <Compile Include="Services\CharacterServiceTests\GetAllCharactersAdministration_Should.cs" />
     <Compile Include="Services\CharacterServiceTests\GetCharacterById_Should.cs" />
     <Compile Include="Services\CharacterServiceTests\GetCharacters_Should.cs" />

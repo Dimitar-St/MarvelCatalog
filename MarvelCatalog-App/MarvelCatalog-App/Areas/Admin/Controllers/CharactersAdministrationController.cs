@@ -118,5 +118,15 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             return RedirectToAction("GetCharacterById", new { id = character.Id });
         }
 
+        [HttpPost]
+        public ActionResult GetCharacterByName(string name)
+        {
+            Guard.WhenArgument(name, nameof(name)).IsNull().Throw();
+
+            var character = this.service.GetCharacter(name);
+
+            return RedirectToAction("GetCharacterById", new { id = character.Id });
+        }
+
     }
 }

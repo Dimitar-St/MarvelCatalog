@@ -24,14 +24,11 @@ namespace MarvelCatalog_App.Services
             this.usersRepository = usersRepository;
         }
 
-        public void AddToFavoritesCharacters(IIdentity user, CharacterDataModel character)
+        public void AddToFavoritesCharacters(string username, CharacterDataModel characterModel)
         {
-           //user.
-        }
+            var user = this.usersRepository.All.FirstOrDefault(usr => usr.UserName == username);
 
-        public IIdentity CurrentUser()
-        {
-            return HttpContext.Current.User.Identity;
+            user.FavoritesCharacters.Add(characterModel);
         }
     }
 }

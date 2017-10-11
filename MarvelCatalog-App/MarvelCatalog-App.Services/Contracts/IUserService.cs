@@ -10,8 +10,6 @@ namespace MarvelCatalog_App.Services.Contracts
 {
     public interface IUserService
     {
-        IIdentity CurrentUser();
-        
-        void AddToFavoritesCharacters(IIdentity user, CharacterDataModel character);
+        void AddToFavoritesCharacters(string username, CharacterDataModel characterModel);
     }
 }

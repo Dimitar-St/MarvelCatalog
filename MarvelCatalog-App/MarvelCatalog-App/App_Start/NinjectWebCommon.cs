@@ -77,6 +77,7 @@ namespace MarvelCatalog_App.App_Start
             kernel.Bind<IEfMarvelCatalogDbContext>().To<EfMarvelCatalogDbContext>().InSingletonScope();
             kernel.Bind<ICharacterService>().To<CharacterService>();
             kernel.Bind<IComicsService>().To<ComicsService>();
+            kernel.Bind<IUserService>().To<UserService>();
             kernel.Bind<ICreatorsService>().To<CreatorsService>();
             kernel.Bind<IUnitOfWork>().To<UnitOfwork>();
             kernel.Bind<IDataModelsFactory>().To<DataModelsFactory>();
@@ -89,6 +90,7 @@ namespace MarvelCatalog_App.App_Start
                             c =>
                             {
                                 c.CreateMap<CharacterDataModel, CharacterViewModel>();
+                                c.CreateMap<CharacterViewModel, CharacterDataModel>();
                                 c.CreateMap<ComicsDataModel, ComicsViewModel>();
                                 c.CreateMap<CreatorsDataModel, CreatorViewModel>();
                                 c.CreateMap<CharacterDataModel, CharactersAdminViewModel>();

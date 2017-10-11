@@ -1,11 +1,8 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "SearchPartial";
 }
 
-<h2>SearchPartial</h2>
-
-@using (Html.BeginForm("AddCharacterToDb", "CharactersAdministration", FormMethod.Post))
+@using (Html.BeginForm("GetCharacterByName", "CharactersAdministration", FormMethod.Post))
 {
     <div class="row" style="margin-bottom: 60px; margin-top: 50px;">
         <div class="col-lg-6">
@@ -13,7 +10,7 @@
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">Search</button>
                 </span>
-                <input type="text" class="form-control" aria-label="..." placeholder="Search by name...">
+                <input type="text" id="txt" name="name" />   
             </div>
         </div>
     </div>

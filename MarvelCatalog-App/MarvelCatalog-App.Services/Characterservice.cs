@@ -75,5 +75,19 @@ namespace MarvelCatalog_App.Services
             this.unitOfwork.SaveChanges();
         }
 
+        public void EditCharacter(dynamic character)
+        {
+            var characterDataModel = this.characters.All
+                                         .First(c => c.Id == character.Id);
+            
+            characterDataModel.Name = character.Name;
+            characterDataModel.Description = character.Description;
+            characterDataModel.isDeleted = character.isDeleted;
+            characterDataModel.Image = character.Image;
+            characterDataModel.ModifiedOn = DateTime.Now;
+
+            this.unitOfwork.SaveChanges();
+        }
+
     }
 }

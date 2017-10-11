@@ -52,7 +52,7 @@ namespace MarvelCatalog_App.Data.Migrations
             //
 
             //this.SeedUsers(context);
-            this.SeedSampleCharacters(context);
+            //this.SeedSampleCharacters(context);
         }
     }
 }

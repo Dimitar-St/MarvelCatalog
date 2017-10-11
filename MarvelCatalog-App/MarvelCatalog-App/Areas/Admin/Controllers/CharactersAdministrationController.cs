@@ -96,5 +96,25 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             return RedirectToAction("RemoveCharacter");
         }
 
+        [HttpPost]
+        public ActionResult EditCharacter(CharactersAdminViewModel character)
+        {
+            Guard.WhenArgument(character, nameof(character)).IsNull().Throw();
+
+            dynamic characterDataObject = new
+            {
+                Id = character.Id,
+                Name = character.Name,
+                Description = character.Description,
+                isDeleted = character.isDeleted,
+                Image = character.Image,
+                ModifiedOn = DateTime.Now
+            };
+
+            this.service.EditCharacter(character);
+
+            return RedirectToAction("GetCharacterById", new { id = character.Id });
+        }
+
     }
 }

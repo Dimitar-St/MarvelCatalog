@@ -7,34 +7,42 @@
     <div class="jumbotron">
         <div class="row">
             <div class="col-md-6">
-              @using (Html.BeginForm("AddUser", "CharactersAdministration", FormMethod.Post))
+              @using (Html.BeginForm("EditCharacter", "CharactersAdministration", FormMethod.Post))
               {
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Name, "Name")
-                    @Html.TextBoxFor(m => m.Name, new { id = "Name", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Name)
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Description, "Description")
-                    @Html.TextAreaFor(m => m.Description, new { id = "Description", @class = "form-control" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.isDeleted, "isDeleted")
-                    @Html.TextBoxFor(m => m.isDeleted, new { id = "isDeleted", @class = "form-control" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Image, "Image")
-                    @Html.TextBoxFor(m => m.Image, new { id = "Image", @class = "form-control" })
-                </div>
-                <br />
-                <div class="text-center">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        <button type="submit" class="btn btn-info form-control">Save Changes</button>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Id, "Id")
+                        @Html.TextBoxFor(m => m.Id, new { id = "Id", @class = "form-control" })
                     </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Name, "Name")
+                        @Html.TextBoxFor(m => m.Name, new { id = "Name", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Name)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Description, "Description")
+                        @Html.TextAreaFor(m => m.Description, new { id = "Description", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.isDeleted, "isDeleted")
+                        @Html.TextBoxFor(m => m.isDeleted, new { id = "isDeleted", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Image, "Image")
+                        @Html.TextBoxFor(m => m.Image, new { id = "Image", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ModifiedOn, "ModifiedOn")
+                        @Html.TextBoxFor(m => m.ModifiedOn, new { id = "ModifiedOn", @class = "form-control" })
+                    </div>
+                    <br />
+                    <div class="text-center">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-info form-control">Save Changes</button>
+                        </div>
+                    </div>
+                    }
                 </div>
-              }
-            </div>
           </div>
     </div>
 </div>

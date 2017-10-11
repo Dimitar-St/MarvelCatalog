@@ -18,6 +18,21 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
     public class RemoveCharacterFromDb_Should
     {
         [Test]
+        public void ThrowArgumentNullException_WhenIsPassed_InvalidValue()
+        {
+            // Arrange
+            var mockedService = new Mock<ICharacterService>();
+            var mockedMapper = new Mock<IMapper>();
+            var mockedFactory = new Mock<IDataModelsFactory>();
+            
+            var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
+
+            // Act & Assert
+            Assert.That(() => characterAdminController.RemoveCharacterFromDb(null),
+                        Throws.ArgumentNullException.With.Message.Contain("character"));
+        }
+
+        [Test]
         public void Call_CreateCharacterMethod_FromTheFactory()
         {
             // Arrange

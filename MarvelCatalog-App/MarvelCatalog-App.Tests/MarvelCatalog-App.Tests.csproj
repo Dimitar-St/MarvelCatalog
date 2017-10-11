@@ -139,6 +139,7 @@
     <Compile Include="Services\ComicsServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\ComicsServiceTests\GetComics_Should.cs" />
     <Compile Include="Services\ComicsServiceTests\GetComic_Should.cs" />
+    <Compile Include="Services\ComicsServiceTests\RemoveComic_Should.cs" />
     <Compile Include="Services\CreatorsServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\CreatorsServiceTests\GetCreators_Should.cs" />
   </ItemGroup>

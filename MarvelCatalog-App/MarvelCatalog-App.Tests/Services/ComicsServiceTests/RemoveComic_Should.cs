@@ -4,68 +4,84 @@ using MarvelCatalog_App.Data.UnitOfWork;
 using MarvelCatalog_App.Services;
 using Moq;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MarvelCatalog_App.Tests.Services.ComicsServiceTests
 {
     [TestFixture]
-    public class AddComic_Should
+    public class RemoveComic_Should
     {
         [Test]
-        public void ThrowArgumentNullException_WhenIsPassed_InvalidArgument()
+        public void ThrowArgumentNullException_WhenIsPassed_InvalidValue()
         {
             // Arrange
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
             var mockedRepo = new Mock<IEfRepository<ComicsDataModel>>();
-
+            
             var comicsService = new ComicsService(mockedUnitOfWork.Object, mockedRepo.Object);
 
             // Act & Assert
-            Assert.That(() => comicsService.AddComic(null),
-                        Throws.ArgumentNullException.With.Message.Contain("comic"));
+            Assert.That(() => comicsService.RemoveComic(null),
+                        Throws.ArgumentNullException.With.Message.Contain("title"));
         }
 
         [Test]
-        public void Call_AddMethod_OfTheRepository()
+        public void Call_AllProperty_OfEfRepository()
         {
             // Arrange
-            var comicsDataModels = new List<ComicsDataModel>();
-            var comic = new ComicsDataModel();
+            var comicsDataModels = new List<ComicsDataModel>()
+            {
+                new ComicsDataModel()
+                {
+                    Title = "title",
+                    isDeleted = false
+                }
+            };
 
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
             var mockedRepo = new Mock<IEfRepository<ComicsDataModel>>();
 
-            mockedRepo.Setup(repo => repo.Add(comic));
+            mockedRepo.Setup(repo => repo.All).Returns(comicsDataModels);
             mockedUnitOfWork.Setup(unit => unit.SaveChanges());
 
             var comicsService = new ComicsService(mockedUnitOfWork.Object, mockedRepo.Object);
 
             // Act
-            comicsService.AddComic(comic);
+            comicsService.RemoveComic("title");
 
-            // Assert
-            mockedRepo.Verify(repo => repo.Add(comic), Times.Once);
+            // Arrange
+            mockedRepo.Verify(repo => repo.All, Times.Once);
         }
 
         [Test]
         public void Call_SaveChangesMethod_OfTheUnitOfWork()
         {
             // Arrange
-            var comicsDataModels = new List<ComicsDataModel>();
-            var comic = new ComicsDataModel();
+            var comicsDataModels = new List<ComicsDataModel>()
+            {
+                new ComicsDataModel()
+                {
+                    Title = "title",
+                    isDeleted = false
+                }
+            };
 
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
             var mockedRepo = new Mock<IEfRepository<ComicsDataModel>>();
 
-            mockedRepo.Setup(repo => repo.Add(comic));
+            mockedRepo.Setup(repo => repo.All).Returns(comicsDataModels);
             mockedUnitOfWork.Setup(unit => unit.SaveChanges());
 
             var comicsService = new ComicsService(mockedUnitOfWork.Object, mockedRepo.Object);
 
             // Act
-            comicsService.AddComic(comic);
+            comicsService.RemoveComic("title");
 
-            // Assert
+            // Arrange
             mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
         }
     }

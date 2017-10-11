@@ -19,7 +19,7 @@ namespace MarvelCatalog_App.Services
         public ComicsService(IUnitOfWork unitOfwork, IEfRepository<ComicsDataModel> comicsRepository)
         {
             //Guard.WhenArgument(unitOfWork, nameof(unitOfWork)).IsNull().Throw();
-            //Guard.WhenArgument(unitOfWork.ComicsRepository, nameof(unitOfWork.ComicsRepository)).IsNull().Throw();
+            //Guard.WhenArgument(comicsRepository, nameof(comicsRepository)).IsNull().Throw();
 
             this.unitOfWork = unitOfwork;
             this.comics = comicsRepository;

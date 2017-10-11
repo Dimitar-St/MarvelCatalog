@@ -28,12 +28,11 @@ namespace MarvelCatalog_App.Tests.Services.ComicsServiceTests
         {
             // Arrange
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
-            IEfRepository<ComicsDataModel> invalidRepo = null;
             
 
             // Act & Assert
             Assert.That(() => new ComicsService(mockedUnitOfWork.Object, null),
-                                Throws.ArgumentNullException.With.Message.Contains("unitOfWork"));
+                                Throws.ArgumentNullException.With.Message.Contains("comicsRepository"));
         }
     }
 }

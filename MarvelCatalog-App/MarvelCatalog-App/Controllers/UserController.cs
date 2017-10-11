@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bytes2you.Validation;
 using Marvel_Catalog_App.Data.Models;
 using MarvelCatalog_App.Services.Contracts;
 using MarvelCatalog_App.ViewModels;
@@ -17,6 +18,9 @@ namespace MarvelCatalog_App.Controllers
 
         public UserController(IUserService service, IMapper mapper)
         {
+            Guard.WhenArgument(service, nameof(service)).IsNull().Throw();
+            Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
+
             this.service = service;
             this.mapper = mapper;
         }

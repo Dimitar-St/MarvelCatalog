@@ -95,5 +95,15 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             return RedirectToAction("RemoveComics");
         }
 
+        [HttpPost]
+        public ActionResult SearchComicByName(string name)
+        {
+            Guard.WhenArgument(name, nameof(name)).IsNull().Throw();
+
+            var comic = this.service.GetComic(name);
+
+            return RedirectToAction("GetComicByTitle", new { title = comic.Title });
+        }
+
     }
 }

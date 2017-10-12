@@ -8,7 +8,7 @@ namespace Marvel_Catalog_App.Data.Models.Contracts
 {
     public interface IDataModelsFactory
     {
-        CharacterDataModel CreateCharacter(string name, string image, string description);
+        CharacterDataModel CreateCharacter(string name, string image, string description, string abilities, string powers, string origin);
 
         CharacterDataModel CreateCharacter();
 

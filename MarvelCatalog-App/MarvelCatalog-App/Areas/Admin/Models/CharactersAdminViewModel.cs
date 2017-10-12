@@ -37,6 +37,12 @@ namespace MarvelCatalog_App.Areas.Admin.Models
 
         public string Description { get; set; }
 
+        public string AbilitiesDesctiption { get; set; }
+
+        public string Powers { get; set; }
+
+        public string Origin { get; set; }
+
         public IDictionary<string, string> Comments { get; set; }
     }
 }

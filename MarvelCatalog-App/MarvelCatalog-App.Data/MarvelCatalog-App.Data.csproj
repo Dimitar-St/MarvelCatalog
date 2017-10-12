@@ -62,6 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IEfMarvelCatalogDbContext.cs" />
+    <Compile Include="Migrations\201710121212456_I added new properties on the CharacterDataModel.cs" />
+    <Compile Include="Migrations\201710121212456_I added new properties on the CharacterDataModel.Designer.cs">
+      <DependentUpon>201710121212456_I added new properties on the CharacterDataModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="EfMarvelCatalogDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +83,11 @@
       <Project>{B8537839-CA0C-4E51-918C-2842DE6262CF}</Project>
       <Name>Marvel-Catalog-App.Data.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710121212456_I added new properties on the CharacterDataModel.resx">
+      <DependentUpon>201710121212456_I added new properties on the CharacterDataModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

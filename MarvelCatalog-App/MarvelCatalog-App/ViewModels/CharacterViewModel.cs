@@ -22,5 +22,11 @@ namespace MarvelCatalog_App.ViewModels
         public string Image { get; set; }
 
         public string Description { get; set; }
+
+        public string AbilitiesDesctiption { get; set; }
+
+        public string Powers { get; set; }
+
+        public string Origin { get; set; }
     }
 }

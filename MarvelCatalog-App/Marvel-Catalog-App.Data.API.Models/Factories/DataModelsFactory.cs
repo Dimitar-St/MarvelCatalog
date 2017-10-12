@@ -11,9 +11,9 @@ namespace Marvel_Catalog_App.Data.Models.Factories
     {
         public DataModelsFactory() { }
 
-        public CharacterDataModel CreateCharacter(string name, string image, string description)
+        public CharacterDataModel CreateCharacter(string name, string image, string description, string abilities, string powers, string origin)
         {
-            return new CharacterDataModel(name, image, description);
+            return new CharacterDataModel(name, image, description, abilities, powers, origin);
         }
 
         public CharacterDataModel CreateCharacter()

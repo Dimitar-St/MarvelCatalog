@@ -72,6 +72,9 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             characterDataModel.Image = character.Image;
             characterDataModel.isDeleted = false;
             characterDataModel.CreatedOn = DateTime.Now;
+            characterDataModel.AbilitiesDesctiption = character.AbilitiesDesctiption;
+            characterDataModel.Origin = character.Origin;
+            characterDataModel.Powers = character.Powers;
 
             this.service.AddCharacter(characterDataModel);
 

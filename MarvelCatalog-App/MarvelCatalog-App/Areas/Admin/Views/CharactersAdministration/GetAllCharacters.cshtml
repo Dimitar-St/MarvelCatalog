@@ -1,36 +1,45 @@
 ﻿@model IEnumerable<MarvelCatalog_App.Areas.Admin.Models.CharactersAdminViewModel>
 @{
     ViewBag.Title = "GetAllChracters";
+    var type = "success";
 }
-    @Html.Partial("SearchPartial");
-    <table class="table table-bordered table-striped table-responsive" style="margin-right: 400px;">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>CreatedOn</th>
-                <th>DeletedOn</th>
-                <th>isDeleted</th>
-                <th>ModifiedOn</th>
-                <th>Name</th>
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody>
-          @foreach (var c in Model)
-          {
-            <tr>
-                <td>@c.Id</td>
-                <td>@c.CreatedOn</td>
-                <td>@c.DeletedOn</td>
-                <td>@c.isDeleted</td>
-                <td>@c.ModifiedOn</td>
-                <td>@c.Name</td>
-                <td>@c.Image</td>
-                <td>
-                   @Html.ActionLink("Edit", "GetCharacterById", "CharactersAdministration", new { id = c.Id }, new { @class = "btn btn-primary" })
-                </td>
-            </tr>
-          }
-        </tbody>
-    </table>
+@Html.Partial("SearchPartial");
+<table class="table table-bordered table-striped table-responsive" style="margin-right: 400px;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>CreatedOn</th>
+            <th>DeletedOn</th>
+            <th>isDeleted</th>
+            <th>ModifiedOn</th>
+            <th>Name</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            if(c.isDeleted)
+            {
+                type = "danger";
+            } else
+            {
+                type = "success";
+            }
+
+          <tr class="@type">            
+              <td>@c.Id</td>
+              <td>@c.CreatedOn</td>
+              <td>@c.DeletedOn</td>
+              <td>@c.isDeleted</td>
+              <td>@c.ModifiedOn</td>
+              <td>@c.Name</td>
+              <td>@c.Image</td>
+              <td>
+                  @Html.ActionLink("Edit", "GetCharacterById", "CharactersAdministration", new { id = c.Id }, new { @class = "btn btn-primary" })
+              </td>
+          </tr>
+        }
+    </tbody>
+</table>
 

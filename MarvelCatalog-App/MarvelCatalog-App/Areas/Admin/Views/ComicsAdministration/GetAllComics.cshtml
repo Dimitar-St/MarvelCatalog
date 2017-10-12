@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<MarvelCatalog_App.Areas.Admin.Models.ComicsAdminViewModel>
 @{
     ViewBag.Title = "GetAllComics";
+    var type = "success";
 }
 
 @Html.Partial("SearchPartial");
@@ -21,7 +22,16 @@
     <tbody>
         @foreach (var c in Model)
         {
-            <tr>
+            if (c.isDeleted)
+            {
+                type = "danger";
+            }
+            else
+            {
+                type = "success";
+            }
+
+            <tr class="@type">
                 <td>@c.Id</td>
                 <td>@c.CreatedOn</td>
                 <td>@c.DeletedOn</td>

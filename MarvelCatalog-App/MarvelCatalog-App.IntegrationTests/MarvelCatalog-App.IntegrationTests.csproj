@@ -64,7 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DataTests\RepositoriesTests\Instantiation_Should.cs" />
     <Compile Include="DataTests\UnitOfWorkTests\Instantiation_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

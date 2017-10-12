@@ -51,7 +51,7 @@ namespace MarvelCatalog_App.Data.Repositories
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            this.Update(entity);
         }
 
         IEnumerator IEnumerable.GetEnumerator()

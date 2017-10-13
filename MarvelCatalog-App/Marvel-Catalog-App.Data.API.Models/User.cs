@@ -16,8 +16,8 @@ namespace Marvel_Catalog_App.Data.Models
     {
         public User()
         {
-            this.FavoritesCharacters = new List<CharacterDataModel>();
-            this.FavoritesComics = new List<ComicsDataModel>();
+            this.FavoritesCharacters = new HashSet<CharacterDataModel>();
+            this.FavoritesComics = new HashSet<ComicsDataModel>();
         }
 
         [DataType(DataType.DateTime)]
@@ -33,19 +33,16 @@ namespace Marvel_Catalog_App.Data.Models
         public DateTime? ModifiedOn { get; set; }
 
         [Display(Name = "FavoritesCharacters"), Required]
-        public ICollection<CharacterDataModel> FavoritesCharacters { get; set; }
+        public HashSet<CharacterDataModel> FavoritesCharacters { get; set; }
 
         [Display(Name = "FavoritesComics"), Required]
-        public ICollection<ComicsDataModel> FavoritesComics { get; set; }
+        public HashSet<ComicsDataModel> FavoritesComics { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-
-            userIdentity.AddClaim(new Claim("FavoritesCharacters", this.FavoritesCharacters.ToString()));
-            userIdentity.AddClaim(new Claim("FavoritesComics", this.FavoritesComics.ToString()));
-
+            
             // Add custom user claims here
             return userIdentity;
         }

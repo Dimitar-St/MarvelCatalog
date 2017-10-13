@@ -1,15 +1,9 @@
-﻿using Marvel_Catalog_App.Data.Models;
+﻿using Bytes2you.Validation;
+using Marvel_Catalog_App.Data.Models;
 using MarvelCatalog_App.Data.Repositories;
 using MarvelCatalog_App.Data.UnitOfWork;
 using MarvelCatalog_App.Services.Contracts;
-using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 
 namespace MarvelCatalog_App.Services
 {
@@ -20,6 +14,9 @@ namespace MarvelCatalog_App.Services
 
         public UserService(IUnitOfWork unitOfwork, IEfRepository<User> usersRepository)
         {
+            Guard.WhenArgument(unitOfwork, nameof(unitOfwork)).IsNull().Throw();
+            Guard.WhenArgument(usersRepository, nameof(usersRepository)).IsNull().Throw();
+
             this.unitOfWork = unitOfwork;
             this.usersRepository = usersRepository;
         }
@@ -29,6 +26,8 @@ namespace MarvelCatalog_App.Services
             var user = this.usersRepository.All.FirstOrDefault(usr => usr.UserName == username);
 
             user.FavoritesCharacters.Add(characterModel);
+
+            this.unitOfWork.SaveChanges();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace MarvelCatalog_App.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpPost]
         public void AddToFavoriteCharacters(string username, CharacterViewModel characterModel)
         {
             var characterDataModel = this.mapper.Map<CharacterDataModel>(characterModel);

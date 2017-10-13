@@ -49,6 +49,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -144,6 +145,7 @@
     <Compile Include="Services\ComicsServiceTests\RemoveComic_Should.cs" />
     <Compile Include="Services\CreatorsServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\CreatorsServiceTests\GetCreators_Should.cs" />
+    <Compile Include="Services\UserserviceTests\Constructor_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

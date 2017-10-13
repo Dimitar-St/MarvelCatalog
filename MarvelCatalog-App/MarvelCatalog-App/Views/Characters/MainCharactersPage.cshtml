@@ -17,8 +17,11 @@
                 <div class="pull-right image-container">
                     <img src="@character.Image" style="height: 400px; width: 250px;">
                 </div>
-                @Html.ActionLink("Show more ...", "GivenCharacterPage", "Characters", new { name = character.Name }, new { @class = "btn btn-primary" })
-                <a class="btn btn-default glyphicon glyphicon-hand-up"></a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("Show more ...", "GivenCharacterPage", "Characters", new { name = character.Name }, new { @class = "btn btn-primary" })
+                    <a class="btn btn-default glyphicon glyphicon-hand-up"></a>
+                }
             </div>
         </div>
     </div>

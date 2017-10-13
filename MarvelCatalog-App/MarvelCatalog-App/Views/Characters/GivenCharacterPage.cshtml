@@ -4,12 +4,19 @@
     ViewBag.Title = "GivenCharacterPage";
 }
 
- <div class="container" *ngFor="let crimeMovie of crimeMovies">
+@using (Html.BeginForm("AddToFavoriteCharacters", "User", new { username = User.Identity.GetUserName() }, FormMethod.Post))
+{
+<div class="container">
      <div class="jumbotron">
          <div class="row">
              <div class="col-md-6">
                  <h2>@Model.Name</h2>
                  <div class="details">
+                     <input type="hidden" name="Name" value="@Model.Name">
+                     <input type="hidden" name="Description" value="@Model.Description">
+                     <input type="hidden" name="Origin" value="@Model.Origin">
+                     <input type="hidden" name="AbilitiesDesctiption" value="@Model.AbilitiesDesctiption">
+                     <input type="hidden" name="Powers" value="@Model.Powers">
                      <h4><b>Desciption: </b> @Model.Description</h4>
                      <h4><b>Origin: </b> @Model.Origin</h4>
                      <h4><b>Abilities: </b> @Model.AbilitiesDesctiption</h4>
@@ -19,9 +26,14 @@
              <div class="pull-right image-container">
                  <img src="@Model.Image" style="height: 400px; width: 250px;">
              </div>
-             @Html.ActionLink("Back", "MainCharactersPage", "Characters", new { @class="btn btn-primary" })
-             @Html.ActionLink("Add to Favorites", "AddToFavoriteCharacters", "User", new { username = User.Identity.Name, characterModel = Model } , new { @class = "btn btn btn-success" })
+             
+                @Html.ActionLink("Back", "MainCharactersPage", "Characters", new { @class = "btn btn-primary" })
+             @if (User.Identity.IsAuthenticated)
+             {
+                <button type="submit" class="btn btn-primary">Add To Favorites</button>
+             }
          </div>
      </div>
  </div>
+}
 

@@ -125,6 +125,11 @@
     <Compile Include="Controllers\ComicsControllerTests\MainComicsPage_Should.cs" />
     <Compile Include="Controllers\CreatorsControllerTests\Constructor_Should.cs" />
     <Compile Include="Controllers\CreatorsControllerTests\MainCreatorsPage_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\Bad_Request_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\Forbidden_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\InternalServer_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\NotFound_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\UnAuthorized_Should.cs" />
     <Compile Include="Controllers\UserControllerTests\Constructor_Should.cs" />
     <Compile Include="Data\MarvelCtalogDbContext\CreateMehtod_Should.cs" />
     <Compile Include="Data\RepositoriesTests\Constructor_Should.cs" />

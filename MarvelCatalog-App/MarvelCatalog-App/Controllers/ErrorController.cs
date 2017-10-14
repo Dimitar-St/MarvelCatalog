@@ -12,27 +12,27 @@ namespace MarvelCatalog_App.Controllers
 
         public ActionResult BadRequest()
         {
-            return this.View();
+            return this.View("BadRequest");
         }
 
         public ActionResult UnAuthorized()
         {
-            return this.View();
+            return this.View("UnAuthorized");
         }
 
         public ActionResult Forbidden()
         {
-            return this.View();
+            return this.View("Forbidden");
         }
 
         public ActionResult NotFound()
         {
-            return this.View();
+            return this.View("NotFound");
         }
 
         public ActionResult InternalServer()
         {
-            return this.View();
+            return this.View("InternalServer");
         }
     }
 }

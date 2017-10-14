@@ -44,5 +44,9 @@ namespace MarvelCatalog_App.Areas.Admin.Models
         public string Origin { get; set; }
 
         public IDictionary<string, string> Comments { get; set; }
+
+        public int CurrentPageIndex { get; set; }
+
+        public int PageCount { get; set; }
     }
 }

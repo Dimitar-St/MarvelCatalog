@@ -31,19 +31,35 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
             this.factory = factory;
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
-            return this.View();
+            return this.View(this.GetAllCharacters(1));
         }
 
-        [HttpGet]
-        public ActionResult GetAllCharacters()
+        [HttpPost]
+        public ActionResult Index(int currentPageIndex)
         {
+            return View(this.GetAllCharacters(currentPageIndex));
+        }
+        
+        public IList<CharactersAdminViewModel> GetAllCharacters(int currentPage)
+        {
+            int maxRоws = 10;
+
             var allCharacters = this.service.GetAllCharactersAdministration();
 
-            var characterDataModel = this.mapper.Map<IEnumerable<CharactersAdminViewModel>>(allCharacters);
+            var charactersDataModel = this.mapper.Map<IEnumerable<CharactersAdminViewModel>>(allCharacters)
+                                        .OrderBy(c => c.Id)
+                                        .Skip((currentPage - 1) * maxRоws)
+                                        .Take(maxRоws)
+                                        .ToList();
+            double pageCount = allCharacters.Count() / maxRоws;
 
-            return this.View(characterDataModel);
+            charactersDataModel[0].PageCount = (int)Math.Ceiling(pageCount);
+            charactersDataModel[0].CurrentPageIndex = currentPage;
+
+            return charactersDataModel;
         }
 
         [HttpGet]

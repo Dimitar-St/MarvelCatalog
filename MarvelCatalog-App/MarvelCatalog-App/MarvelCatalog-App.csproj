@@ -266,7 +266,7 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\CharactersAdministration\GetAllCharacters.cshtml" />
+    <Content Include="Areas\Admin\Views\CharactersAdministration\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CharactersAdministration\GetCharacterById.cshtml" />
     <Content Include="Areas\Admin\Views\CharactersAdministration\AddCharacter.cshtml" />
     <Content Include="Areas\Admin\Views\CharactersAdministration\RemoveCharacter.cshtml" />

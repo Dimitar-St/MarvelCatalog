@@ -10,11 +10,14 @@ namespace MarvelCatalog_App.ViewModels
     {
         public CharacterViewModel() { }
 
-        public CharacterViewModel(string name, string image, string description)
+        public CharacterViewModel(string name, string image, string description, string powers, string origin, string abilitiesDesctiption)
         {
             this.Name = name;
             this.Image = image;
             this.Description = description;
+            this.Powers = powers;
+            this.Origin = origin;
+            this.AbilitiesDesctiption = abilitiesDesctiption;
         }
 
         public string Name { get; set; }

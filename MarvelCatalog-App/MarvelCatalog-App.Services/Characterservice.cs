@@ -35,7 +35,7 @@ namespace MarvelCatalog_App.Services
         {
             Guard.WhenArgument(name, nameof(name)).IsEmpty().IsNull().Throw();
 
-            var wantedCharacter = this.characters.All.FirstOrDefault(c => c.Name == name);
+            var wantedCharacter = this.characters.All.FirstOrDefault(c => c.Name == name && c.isDeleted == false);
 
             return wantedCharacter;
         }

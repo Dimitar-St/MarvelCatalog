@@ -23,7 +23,7 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
             var characterName = "some name";
 
             var characterDataModel = new CharacterDataModel();
-            var characterViewModel = new CharacterViewModel("", "", "");
+            var characterViewModel = new CharacterViewModel("", "", "", "asd", "asdasd", "asdasd");
 
             var mockedService = new Mock<ICharacterService>();
             var mockedMapper = new Mock<IMapper>();
@@ -47,7 +47,7 @@ namespace MarvelCatalog_App.Tests.Controllers.CharactersControllerTests
             var characterName = "some name";
 
             var characterDataModel = new CharacterDataModel();
-            var characterViewModel = new CharacterViewModel("", "", "");
+            var characterViewModel = new CharacterViewModel("", "", "", "asda", "asdasd", "asdasda");
 
             var mockedService = new Mock<ICharacterService>();
             var mockedMapper = new Mock<IMapper>();

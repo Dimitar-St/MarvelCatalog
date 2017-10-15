@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministrationControllerTests
 {
@@ -50,6 +51,27 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
 
             // Assert
             mockedService.Verify(service =>  service.GetCharacter("name"), Times.Once);
+        }
+
+        [Test]
+        public void Return_ErrorViewResult()
+        {
+            // Arrange
+            CharacterDataModel invalidCharacterModel = null;
+
+            var mockedService = new Mock<ICharacterService>();
+            var mockedMapper = new Mock<IMapper>();
+            var mockedFactory = new Mock<IDataModelsFactory>();
+
+            mockedService.Setup(service => service.GetCharacter("name")).Returns(invalidCharacterModel);
+
+            var characterAdministrationController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
+
+            // Act 
+            //var result = characterAdministrationController.GetCharacterByName("name") as ViewResult;
+
+            // Assert
+            //Assert.AreEqual("NotFound", result.ViewName);
         }
     }
 }

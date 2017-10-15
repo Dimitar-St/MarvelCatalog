@@ -45,6 +45,11 @@ namespace MarvelCatalog_App.Controllers
         {
             var characterData = this.characterService.GetCharacter(name);
 
+            if(characterData == null)
+            {
+                return RedirectToAction("NotFound", "Error");
+            }
+
             CharacterViewModel characterViewModel = this.mapper.Map<CharacterViewModel>(characterData);
 
             return this.View(characterViewModel);

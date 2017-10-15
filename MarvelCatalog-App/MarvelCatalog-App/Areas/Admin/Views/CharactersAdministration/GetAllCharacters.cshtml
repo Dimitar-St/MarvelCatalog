@@ -1,11 +1,10 @@
-﻿@model IEnumerable<MarvelCatalog_App.Areas.Admin.Models.ComicsAdminViewModel>
+﻿@model List<MarvelCatalog_App.Areas.Admin.Models.CharactersAdminViewModel>
 @{
-    ViewBag.Title = "GetAllComics";
+    ViewBag.Title = "GetAllChracters";
     var type = "success";
     WebGrid grid = new WebGrid(Model, rowsPerPage: 10);
 }
-
-@Html.Partial("SearchPartial");
+@Html.Partial("SearchPartial")
 
 @grid.GetHtml(
     tableStyle: "table table-bordered table-striped table-responsive",
@@ -16,9 +15,8 @@
         grid.Column("DeletedOn", "DeletedOn"),
         grid.Column("isDeleted", "isDeleted"),
         grid.Column("ModifiedOn", "ModifiedOn"),
-        grid.Column("Title", "Title"),
         grid.Column("Image", "Image"),
-        grid.Column("Description", "Description"),
-        grid.Column("Price", "Price"),
-        grid.Column(columnName: "", format: (item) => Html.ActionLink("Edit", "GetComicByTitle", "ComicsAdministration", new { title = item.Title }, new { @class = "btn btn-primary" }))
+        grid.Column("Name", "Name"),
+        grid.Column(columnName: "", format: (item) => Html.ActionLink("Edit", "GetCharacterById", "CharactersAdministration", new { id = item.Id }, new { @class = "btn btn-primary" }))
 ))
+

@@ -23,19 +23,7 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
         {
             // Arrange
             var charactersDataModels = new List<CharacterDataModel>();
-            var charactersVeiwModel = new List<CharactersAdminViewModel>()
-            {
-                new CharactersAdminViewModel() { Id = 1 },
-                new CharactersAdminViewModel() { Id = 2 },
-                new CharactersAdminViewModel() { Id = 3 },
-                new CharactersAdminViewModel() { Id = 4 },
-                new CharactersAdminViewModel() { Id = 5 },
-                new CharactersAdminViewModel() { Id = 6 },
-                new CharactersAdminViewModel() { Id = 7 },
-                new CharactersAdminViewModel() { Id = 8 },
-                new CharactersAdminViewModel() { Id = 9 },
-                new CharactersAdminViewModel() { Id = 10 }
-            };
+            var charactersVeiwModel = new List<CharactersAdminViewModel>();
 
             var mockedService = new Mock<ICharacterService>();
             var mockedMapper = new Mock<IMapper>();
@@ -49,7 +37,7 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
             var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
 
             // Act
-            characterAdminController.GetAllCharacters(1);
+            characterAdminController.GetAllCharacters();
 
             // Assert
             mockedService.Verify(service => service.GetAllCharactersAdministration(), Times.Once);
@@ -60,19 +48,7 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
         {
             // Arrange
             var charactersDataModels = new List<CharacterDataModel>();
-            var charactersVeiwModel = new List<CharactersAdminViewModel>()
-            {
-                new CharactersAdminViewModel() { Id = 1 },
-                new CharactersAdminViewModel() { Id = 2 },
-                new CharactersAdminViewModel() { Id = 3 },
-                new CharactersAdminViewModel() { Id = 4 },
-                new CharactersAdminViewModel() { Id = 5 },
-                new CharactersAdminViewModel() { Id = 6 },
-                new CharactersAdminViewModel() { Id = 7 },
-                new CharactersAdminViewModel() { Id = 8 },
-                new CharactersAdminViewModel() { Id = 9 },
-                new CharactersAdminViewModel() { Id = 10 }
-            };
+            var charactersVeiwModel = new List<CharactersAdminViewModel>();
 
             var mockedService = new Mock<ICharacterService>();
             var mockedMapper = new Mock<IMapper>();
@@ -86,7 +62,7 @@ namespace MarvelCatalog_App.Tests.Admin.ControllersTest.CharactersAdministration
             var characterAdminController = new CharactersAdministrationController(mockedService.Object, mockedMapper.Object, mockedFactory.Object);
 
             // Act
-            characterAdminController.GetAllCharacters(1);
+            characterAdminController.GetAllCharacters();
 
             // Assert
             mockedMapper.Verify(mapper => mapper.Map<IEnumerable<CharactersAdminViewModel>>(charactersDataModels), Times.Once);

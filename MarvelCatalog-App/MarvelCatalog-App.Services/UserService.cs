@@ -23,6 +23,9 @@ namespace MarvelCatalog_App.Services
 
         public void AddToFavoritesCharacters(string username, CharacterDataModel characterModel)
         {
+            Guard.WhenArgument(username, nameof(username)).IsNull().Throw();
+            Guard.WhenArgument(characterModel, nameof(characterModel)).IsNull().Throw();
+
             var user = this.usersRepository.All.FirstOrDefault(usr => usr.UserName == username);
 
             user.FavoritesCharacters.Add(characterModel);

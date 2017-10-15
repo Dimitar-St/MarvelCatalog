@@ -150,6 +150,7 @@
     <Compile Include="Services\ComicsServiceTests\RemoveComic_Should.cs" />
     <Compile Include="Services\CreatorsServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\CreatorsServiceTests\GetCreators_Should.cs" />
+    <Compile Include="Services\UserserviceTests\AddToFavoritesCharacters_Should.cs" />
     <Compile Include="Services\UserserviceTests\Constructor_Should.cs" />
   </ItemGroup>
   <ItemGroup>

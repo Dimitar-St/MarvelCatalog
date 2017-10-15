@@ -51,7 +51,7 @@ namespace MarvelCatalog_App.Data.Repositories
 
         public void Update(T entity)
         {
-            this.Update(entity);
+            this.dbSet.Attach(entity);
         }
 
         IEnumerator IEnumerable.GetEnumerator()

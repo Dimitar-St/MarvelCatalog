@@ -132,7 +132,10 @@
     <Compile Include="Controllers\ErrorControllerTests\UnAuthorized_Should.cs" />
     <Compile Include="Controllers\UserControllerTests\Constructor_Should.cs" />
     <Compile Include="Data\MarvelCtalogDbContext\CreateMehtod_Should.cs" />
+    <Compile Include="Data\RepositoriesTests\Add_Should.cs" />
     <Compile Include="Data\RepositoriesTests\Constructor_Should.cs" />
+    <Compile Include="Data\RepositoriesTests\Delete_Should.cs" />
+    <Compile Include="Data\RepositoriesTests\Update_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\CharacterServiceTests\AddCharacter_Should.cs" />

@@ -128,6 +128,11 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
 
             var character = this.service.GetCharacter(name);
 
+            if(character == null)
+            {
+                return RedirectToAction("NotFound", "Error");
+            }
+
             return RedirectToAction("GetCharacterById", new { id = character.Id });
         }
 

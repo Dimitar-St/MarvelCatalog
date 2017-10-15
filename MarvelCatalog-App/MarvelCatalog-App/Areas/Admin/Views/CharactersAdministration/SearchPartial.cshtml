@@ -4,6 +4,7 @@
 
 @using (Html.BeginForm("GetCharacterByName", "CharactersAdministration", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div class="row" style="margin-bottom: 60px; margin-top: 50px;">
         <div class="col-lg-6">
             <div class="input-group">

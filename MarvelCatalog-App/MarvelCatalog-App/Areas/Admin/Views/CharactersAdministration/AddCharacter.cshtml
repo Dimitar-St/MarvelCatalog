@@ -9,6 +9,7 @@
             <div class="col-md-6">
                 @using (Html.BeginForm("AddCharacterToDb", "CharactersAdministration", FormMethod.Post))
                 {
+                    @Html.AntiForgeryToken()
                     <div class="form-group">
                         @Html.LabelFor(m => m.Name)
                         @Html.TextBoxFor(m => m.Name, new { id = "Name", @class = "form-control" })

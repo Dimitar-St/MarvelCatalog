@@ -102,6 +102,11 @@ namespace MarvelCatalog_App.Areas.Admin.Controllers
 
             var comic = this.service.GetComic(name);
 
+            if (comic == null)
+            {
+                return RedirectToAction("NotFound", "Error");
+            }
+
             return RedirectToAction("GetComicByTitle", new { title = comic.Title });
         }
 

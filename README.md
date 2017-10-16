@@ -15,7 +15,7 @@ Roles in the application and what can they visit.
 
 ### Images from the application:
 
-![](Images/Administration page.png)
+![](Images/Administrationpage.png)
 ![](Images/EditUserPage.png)
 ![](Images/LoggedUserPage.png)
 ![](Images/UnsignUserPage.png)
